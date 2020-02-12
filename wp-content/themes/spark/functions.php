@@ -325,3 +325,203 @@ class mobile_menu extends Walker_Nav_Menu {
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 }
+
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+********************************************************************ХЛЕБНЫЕ КРОШКИ*************************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+function dimox_breadcrumbs() {
+	/* === ОПЦИИ === */
+	$text['home'] = 'Главная'; // текст ссылки "Главная"
+	$text['category'] = '%s'; // текст для страницы рубрики
+	$text['search'] = 'Результаты поиска по запросу "%s"'; // текст для страницы с результатами поиска
+	$text['tag'] = 'Записи с тегом "%s"'; // текст для страницы тега
+	$text['author'] = 'Статьи автора %s'; // текст для страницы автора
+	$text['404'] = 'Ошибка 404'; // текст для страницы 404
+	$text['page'] = 'Страница %s'; // текст 'Страница N'
+	$text['cpage'] = 'Страница комментариев %s'; // текст 'Страница комментариев N'
+  
+	$wrap_before = '<ol class="breadcrumb">'; // открывающий тег обертки
+	$wrap_after = '</ol>'; // закрывающий тег обертки
+	$sep = ''; // разделитель между "крошками"
+	$sep_before = ''; // тег перед разделителем
+	$sep_after = ''; // тег после разделителя
+	$show_home_link = 1; // 1 - показывать ссылку "Главная", 0 - не показывать
+	$show_on_home = 0; // 1 - показывать "хлебные крошки" на главной странице, 0 - не показывать
+	$show_current = 1; // 1 - показывать название текущей страницы, 0 - не показывать
+	$before = '<li class="breadcrumb-item">'; // тег перед текущей "крошкой"
+	$after = '</li>'; // тег после текущей "крошки"
+	/* === КОНЕЦ ОПЦИЙ === */
+  
+	global $post;
+	$home_url = home_url('/');
+	$link_before = '';
+	$link_after = '';
+	$link_attr = '';
+	$link_in_before = '';
+	$link_in_after = '';
+	$link = $link_before . '<li><a href="%1$s"' . $link_attr . '>' . $link_in_before . '%2$s' . $link_in_after . '</a></li>' . $link_after;
+	$frontpage_id = get_option('page_on_front');
+	$parent_id = ($post) ? $post->post_parent : '';
+	$sep = ' ' . $sep_before . $sep . $sep_after . ' ';
+	$home_link = $link_before . '<li><a href="' . $home_url . '"' . $link_attr . '>' . $link_in_before . $text['home'] . $link_in_after . '</a></li>' . $link_after;
+  
+	if (is_home() || is_front_page()) {
+	
+		if ($show_on_home) echo $wrap_before . $home_link . $wrap_after;
+	
+	} else {
+	
+		echo $wrap_before;
+		if ($show_home_link) echo $home_link;
+		
+		if ( is_category() ) {
+			$cat = get_category(get_query_var('cat'), false);
+			if ($cat->parent != 0) {
+				$cats = get_category_parents($cat->parent, TRUE, $sep);
+				$cats = preg_replace("#^(.+)$sep$#", "$1", $cats);
+				$cats = preg_replace('#<a([^>]+)>([^<]+)<\/a>#', $link_before . '<a$1' . $link_attr .'>' . $link_in_before . '$2' . $link_in_after .'</a>' . $link_after, $cats);
+				if ($show_home_link) echo $sep;
+				echo $cats;
+			}
+			if ( get_query_var('paged') ) {
+				$cat = $cat->cat_ID;
+				echo $sep . sprintf($link, get_category_link($cat), get_cat_name($cat)) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
+			} else {
+				if ($show_current) echo $sep . '<li class="breadcrumb-item active" aria-current="page">' . sprintf($text['category'], single_cat_title('', false)) . '</li>';
+			}
+	  
+		} elseif ( is_search() ) {
+			if (have_posts()) {
+				if ($show_home_link && $show_current) echo $sep;
+				if ($show_current) echo '<li class="breadcrumb-item active" aria-current="page">' . sprintf($text['search'], get_search_query()) . '</li>';
+			} else {
+				if ($show_home_link) echo $sep;
+				echo $before . sprintf($text['search'], get_search_query()) . $after;
+			}
+		} elseif ( is_day() ) {
+			if ($show_home_link) echo $sep;
+			echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $sep;
+			echo sprintf($link, get_month_link(get_the_time('Y'), get_the_time('m')), get_the_time('F'));
+			if ($show_current) echo $sep . '<li class="breadcrumb-item active" aria-current="page">' . get_the_time('d') . '</li>';
+		} elseif ( is_month() ) {
+			if ($show_home_link) echo $sep;
+			echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y'));
+			if ($show_current) echo $sep . '<li class="breadcrumb-item active" aria-current="page">' . get_the_time('F') . '</li>';
+		} elseif ( is_year() ) {
+			if ($show_home_link && $show_current) echo $sep;
+			if ($show_current) echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_time('Y') . '</li>';
+		} elseif ( is_single() && !is_attachment() ) {
+			//Категории (для single.php)
+			if ($show_home_link) echo $sep;
+			if ( get_post_type() != 'post' ) {
+				if( get_post_type() == 'appliances'){
+					$page = get_post('755');
+					
+					$term = get_the_terms(get_the_ID(), 'appliances-list');
+					
+					echo '<li><a href="'.get_page_link($page->ID).'">' . $page->post_title . '</a></li>' . $after . $sep . $before .'<li><a href="'.get_term_link($term[0]->term_id, 'appliances-list').'">' . $term[0]->name . '</a></li>' ;
+					
+					if ($show_current) echo $sep . '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+				}else{
+					$post_type = get_post_type_object(get_post_type());
+					$slug = $post_type->rewrite;
+					printf($link, $home_url . $slug['slug'] . '/', $post_type->labels->singular_name);
+					if ($show_current) echo $sep . '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+				}
+			} else {
+				$cat = get_the_category(); $cat = $cat[0];
+				$cats = get_category_parents($cat, TRUE, $sep);
+				if (!$show_current || get_query_var('cpage')) $cats = preg_replace("#^(.+)$sep$#", "$1", $cats);
+					$cats = preg_replace('#<a([^>]+)>([^<]+)<\/a>#', $link_before . '<li><a$1' . $link_attr .'>' . $link_in_before . '$2' . $link_in_after .'</a></li>' . $link_after, $cats);
+				echo $cats;
+				if ( get_query_var('cpage') ) {
+					echo $sep . sprintf($link, get_permalink(), get_the_title()) . $sep . $before . sprintf($text['cpage'], get_query_var('cpage')) . $after;
+				} else {
+					if ($show_current) echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+				}
+			}
+			// custom post type
+		} elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+			//Категории (для category.php)
+			$term_name = get_term( get_queried_object()->term_id, 'appliances-list' );
+			
+			if(get_post_type() == 'appliances' || $term_name->taxonomy == 'appliances-list'){
+				$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+				
+				$page = get_post('755');
+				
+				echo $sep . '<li><a href="'.get_page_link($page->ID).'">' . $page->post_title . '</a></li>' . $after ;
+
+				if ($show_current) echo $sep . '<li class="breadcrumb-item active" aria-current="page">' . $term->name . '</li>';
+			}else{
+				$post_type = get_post_type_object(get_post_type());	  
+				if ( get_query_var('paged') ) {
+					echo $sep . sprintf($link, get_page_link( $post_type->name), $post_type->label) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
+				} else {
+					if ($show_current) echo $sep . '<li class="breadcrumb-item active" aria-current="page">' . $post_type->label . '</li>';
+				}
+			}
+	
+		} elseif ( is_attachment() ) {
+			if ($show_home_link) echo $sep;
+			$parent = get_post($parent_id);
+			$cat = get_the_category($parent->ID); $cat = $cat[0];
+			if ($cat) {
+				$cats = get_category_parents($cat, TRUE, $sep);
+				$cats = preg_replace('#<a([^>]+)>([^<]+)<\/a>#', $link_before . '<a$1' . $link_attr .'>' . $link_in_before . '$2' . $link_in_after .'</a>' . $link_after, $cats);
+				echo $cats;
+			}
+			printf($link, get_permalink($parent), $parent->post_title);
+			if ($show_current) echo $sep . '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+		} elseif ( is_page() && !$parent_id ) {
+				if ($show_current) echo $sep . '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+		} elseif ( is_page() && $parent_id ) {
+			if ($show_home_link) echo $sep;
+			if ($parent_id != $frontpage_id) {
+				$breadcrumbs = array();
+				while ($parent_id) {
+				  $page = get_page($parent_id);
+				  if ($parent_id != $frontpage_id) {
+					  $breadcrumbs[] = sprintf($link, get_permalink($page->ID), get_the_title($page->ID));
+				  }
+				  $parent_id = $page->post_parent;
+				}
+				$breadcrumbs = array_reverse($breadcrumbs);
+				for ($i = 0; $i < count($breadcrumbs); $i++) {
+					  echo $breadcrumbs[$i];
+					  if ($i != count($breadcrumbs)-1) echo $sep;
+				}
+			}
+			if ($show_current) echo $sep . '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+		} elseif ( is_tag() ) {
+			if ( get_query_var('paged') ) {
+				$tag_id = get_queried_object_id();
+				$tag = get_tag($tag_id);
+				echo $sep . sprintf($link, get_tag_link($tag_id), $tag->name) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
+			} else {
+				if ($show_current) echo $sep . '<li class="breadcrumb-item active" aria-current="page">' . sprintf($text['tag'], single_tag_title('', false)) . '</li>';
+			}
+		} elseif ( is_author() ) {
+			global $author;
+			$author = get_userdata($author);
+			if ( get_query_var('paged') ) {
+				if ($show_home_link) echo $sep;
+				echo sprintf($link, get_author_posts_url($author->ID), $author->display_name) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
+			} else {
+				if ($show_home_link && $show_current) echo $sep;
+				if ($show_current) echo '<li class="breadcrumb-item active" aria-current="page">' . sprintf($text['author'], $author->display_name) . '</li>';
+			}
+		} elseif ( is_404() ) {
+			if ($show_home_link && $show_current) echo $sep;
+			if ($show_current) echo '<li class="breadcrumb-item active" aria-current="page">' . $text['404'] . '</li>';
+	
+		} elseif ( has_post_format() && !is_singular() ) {
+			if ($show_home_link) echo $sep;
+			echo get_post_format_string( get_post_format() );
+		}
+	
+		echo $wrap_after;
+	}
+}
