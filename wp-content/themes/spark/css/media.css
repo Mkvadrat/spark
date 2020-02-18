@@ -21,6 +21,10 @@
     .category__img {
         width: 90px;
     }
+
+    .grid__popup a {
+        width: 100%;
+    }
 }
 
 @media all and (max-width: 1500px) {
@@ -101,7 +105,8 @@
 }
 
 @media all and (max-width: 1300px) {
-    .item__news {
+    .item__news,
+    .career__item {
         width: 100%;
     }
 }
@@ -114,6 +119,10 @@
 
     .grid__gallery img {
         width: calc(100% / 2 - 16px);
+    }
+
+    .item__license {
+        width: calc(100% / 3 - 16px);
     }
 
 }
@@ -302,7 +311,8 @@
         min-height: auto;
     }
 
-    .grid__gallery img {
+    .grid__gallery img,
+    .item__license {
         width: 100%;
     }
 }

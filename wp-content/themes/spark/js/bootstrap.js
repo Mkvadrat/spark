@@ -988,6 +988,7 @@ if (typeof jQuery === 'undefined') {
     this.checkScrollbar()
     this.setScrollbar()
     this.$body.addClass('modal-open')
+    this.$body.parent().addClass('lock')
 
     this.escape()
     this.resize()
@@ -1098,6 +1099,7 @@ if (typeof jQuery === 'undefined') {
     this.$element.hide()
     this.backdrop(function () {
       that.$body.removeClass('modal-open')
+      that.$body.parent().removeClass('lock')
       that.resetAdjustments()
       that.resetScrollbar()
       that.$element.trigger('hidden.bs.modal')

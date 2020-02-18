@@ -29,6 +29,9 @@ function mk_scripts(){
 	wp_register_style( 'mburger-css', get_template_directory_uri() . '/css/mburger.css');
 	wp_enqueue_style( 'mburger-css' );
 	
+	wp_register_style( 'carousel-css', get_template_directory_uri() . '/css/owl.carousel.min.css');
+	wp_enqueue_style( 'carousel-css' );
+	
 	wp_register_style( 'styles-css', get_template_directory_uri() . '/css/styles.css');
 	wp_enqueue_style( 'styles-css' );
 
@@ -39,6 +42,7 @@ function mk_scripts(){
 		wp_enqueue_script( 'jquery-min', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', '', '', true );
 		wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/js/bootstrap.js', '', '', true );
 		wp_enqueue_script( 'mmenu-min', get_template_directory_uri() . '/js/mmenu.js', '', '', true );
+		wp_enqueue_script( 'carousel-min', get_template_directory_uri() . '/js/owl.carousel.min.js', '', '', true );
 		wp_enqueue_script( 'custom-min', get_template_directory_uri() . '/js/custom.js', '', '', true );
 	}
 }
@@ -129,6 +133,16 @@ function register_my_widgets(){
 	) );
 }
 add_action( 'widgets_init', 'register_my_widgets' );
+
+// add to functions.php
+/*add_action('init', 'add_NGG_actions_to_acf');
+function add_NGG_actions_to_acf() {
+  if (class_exists('C_NextGen_Shortcode_Manager')) {
+    $instance = C_NextGen_Shortcode_Manager::get_instance();
+    add_filter('acf_the_content', array(&$instance, 'fix_nested_shortcodes'), -1);
+    add_filter('acf_the_content', array(&$instance, 'parse_content'), PHP_INT_MAX);
+  }
+}*/
 
 /**********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************
@@ -539,3 +553,77 @@ function dimox_breadcrumbs() {
 		echo $wrap_after;
 	}
 }
+
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************"РАЗДЕЛ ВАКАНСИИ"*******************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+function register_post_type_vacancy() {
+	$labels = array(
+	 'name' => 'Вакансии',
+	 'singular_name' => 'Вакансия',
+	 'add_new' => 'Добавить статью',
+	 'add_new_item' => 'Добавить новую статью',
+	 'edit_item' => 'Редактировать статью',
+	 'new_item' => 'Новая статья',
+	 'all_items' => 'Все статьи',
+	 'view_item' => 'Просмотр статей на сайте',
+	 'search_items' => 'Искать статьи',
+	 'not_found' => 'Статьи не найдены.',
+	 'not_found_in_trash' => 'В корзине нет статей.',
+	 'menu_name' => 'Вакансии'
+	);
+
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'exclude_from_search' => true,
+		'show_ui' => true,
+		'has_archive' => false,
+		'menu_icon' => 'dashicons-megaphone',
+		'menu_position' => 20,
+		'supports' =>  array('title','editor'),
+		'publicly_queryable'  => false,
+		'query_var'           => false
+	 );
+ 	register_post_type('vacancy', $args);
+}
+add_action( 'init', 'register_post_type_vacancy' );
+
+function true_post_type_vacancy( $vacancy ) {
+
+	global $post, $post_ID;
+
+	$faq['vacancy'] = array(
+		0 => '',
+		1 => sprintf( 'Статьи обновлены. <a href="%s">Просмотр</a>', esc_url( get_permalink($post_ID) ) ),
+		2 => 'Статьи обновлёны.',
+		3 => 'Статья удалёна.',
+		4 => 'Статья обновлена.',
+		5 => isset($_GET['revision']) ? sprintf( 'Статья восстановлена из редакции: %s', wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+		6 => sprintf( 'Статья опубликована на сайте. <a href="%s">Просмотр</a>', esc_url( get_permalink($post_ID) ) ),
+		7 => 'Статья сохранена.',
+		8 => sprintf( 'Отправлен на проверку. <a target="_blank" href="%s">Просмотр</a>', esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+		9 => sprintf( 'Запланирован на публикацию: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Просмотр</a>', date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+		10 => sprintf( 'Черновик обновлён. <a target="_blank" href="%s">Просмотр</a>', esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+	);
+
+	return $vacancy;
+}
+add_filter( 'post_updated_messages', 'true_post_type_vacancy' );
+
+//Категории для пользовательских записей "Вакансии"
+function create_taxonomies_vacancy() {
+    // Cats Categories
+    register_taxonomy('vacancy-list',array('vacancy'),array(
+        'hierarchical' => true,
+        'label' => 'Рубрики',
+        'singular_name' => 'Рубрика',
+        'show_ui' => true,
+        'query_var' => true,
+		'publicly_queryable' => false,
+        'rewrite' => array('slug' => 'vacancy-list' )
+    ));
+}
+add_action( 'init', 'create_taxonomies_vacancy', 0 );

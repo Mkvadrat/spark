@@ -23,7 +23,7 @@ $(document).ready(function () {
         nav: true,
         dots: false,
         margin: 10,
-        navText : ["<img src='images/left-car.svg'/>","<img src='images/right-kar.svg'/>"]
+        navText: ["<img src='/wp-content/themes/spark/images/left-car.svg'/>", "<img src='/wp-content/themes/spark/images/right-kar.svg'/>"]
     });
 });
 
