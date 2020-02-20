@@ -25,6 +25,8 @@ $(document).ready(function () {
         margin: 10,
         navText: ["<img src='/wp-content/themes/spark/images/left-car.svg'/>", "<img src='/wp-content/themes/spark/images/right-kar.svg'/>"]
     });
+    
+    $('.button-group span *[type="submit"]').attr('disabled', 'disabled');
 });
 
 
