@@ -27,12 +27,20 @@ get_header();
                         <div class="grid__license">
                             <?php while ( have_rows('licenses_list_documents_page') ) { the_row(); ?>
                             <div class="item__license">
-                                <img src="<?php echo get_sub_field('file_documents_page'); ?>" alt=""/>
+                                <a class="image-popup-no-margins" href="<?php echo get_sub_field('file_documents_page'); ?>">
+                                        <img  src="<?php echo get_sub_field('file_documents_page'); ?>" >
+                                </a>
+                              
                                 <p><?php echo get_sub_field('name_file_documents_page'); ?></p>
                             </div>
                             <?php } ?>
                         </div>
                         <?php } ?>
+
+
+
+
+  
                     </div>
                 </div>
             </div>

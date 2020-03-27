@@ -21,35 +21,47 @@ Version: 1.0
 <body>
     
 <!-- The page -->
-<div class="page <?php if(is_front_page()){ ?>home<?php } ?>">
-    <div class="bg__group">
+    <div id="page-preloader" class="preloader">
+      <div class="loader"></div>
+    </div>
+	<div class="page <?php if(is_front_page()){ ?>home<?php } ?>">
+    	<div class="bg__group">
         <div class="bg__block"></div>
     </div>
+  	 
 
     <div class="section__fixed">
-        <div class="header">
+    	<div id="navbar">
+	 	<a href="#"><img src="/wp-content/themes/spark/images/logo-scroll.svg"/></a>
+	 </div>
+        <div class="header header-scroll">
             <div class="top-left">
                 <div class="languages__block">
-                    <span class="active"><a href="<?php echo get_field('ru_header_main_page', '54'); ?>">RU</a></span>
-                    <span><a href="<?php echo get_field('en_header_main_page', '54'); ?>">EN</a></span>
-                    <span><a href="<?php echo get_field('es_header_main_page', '54'); ?>">ES</a></span>
+                    <span class="active wow fadeIn"><a href="<?php echo get_field('ru_header_main_page', '54'); ?>">RU</a></span>
+                    <span class="wow fadeIn" data-wow-delay="0.2s" ><a href="<?php echo get_field('en_header_main_page', '54'); ?>">EN</a></span>
+                    <span class="wow fadeIn" data-wow-delay="0.8s"><a href="<?php echo get_field('es_header_main_page', '54'); ?>">ES</a></span>
                 </div>
+              
             </div>
             <div class="top">
-                <div class="logo__block">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
+                <div class="logo__block "  >
+                    <a href="http://spark.mkvadrat.com/" > 
+                        <img class="wow slideInLeft" src="/wp-content/themes/spark/images/Logo.svg">
+                    </a>
+                  <!--   <p id="bounce" class="am">asdas</p> -->
+                   <!--  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
                         <img
                           src="<?php header_image(); ?>"
                           height="<?php echo get_custom_header()->height; ?>"
                           width="<?php echo get_custom_header()->width; ?>"
                           alt="logotype"
                         />
-                    </a>
-                    <div class="logo__text"><?php echo get_field('text_logo_header_main_page', '54'); ?></div>
+                    </a> -->
+                    <div class="logo__text wow slideInLeft"  data-wow-delay="0.1s"><?php echo get_field('text_logo_header_main_page', '54'); ?></div>
                 </div>
                 
                 <?php if(is_front_page()){ ?>
-                <div class="title__block"><?php echo get_field('title_central_header_main_page', '54'); ?></div>
+                <div class="title__block wow slideInRight" ><?php echo get_field('title_central_header_main_page', '54'); ?></div>
                 <?php } ?>
             </div>
         </div>
@@ -61,7 +73,7 @@ Version: 1.0
     </div>
 
     <div class="sidebar__left">
-        <div class="menu">
+        <div class="menu" >
             <div class="btn-group-vertical">
                 <?php
                     if (has_nav_menu('header_menu')){
@@ -87,7 +99,7 @@ Version: 1.0
                 ?>
             </div>
         </div>
-        <div class="contact__block">
+        <div class="contact__block wow slideInUp">
             <?php if(get_field('phone_header_main_page', '54')){ ?>
             <div class="icon__block"><img src="/wp-content/themes/spark/images/phone.png" width="19"/></div>
             <?php } ?>

@@ -16,7 +16,7 @@ Version: 1.0
                     <div class="col-xs-12">
                         <div class="row">
                             <?php if(get_field('phone_footer_main_page', '54') || get_field('fax_footer_main_page', '54') || get_field('email_footer_main_page', '54')){ ?>
-                            <div class="col-xs-12 col-md-6 col-lg-4">
+                            <div class="col-xs-6 col-md-6 col-lg-4">
                                 <?php if(get_field('phone_text_footer_main_page', '54')){ ?>
                                 <div class="footer__info">
                                     <p><?php echo get_field('email_footer_main_page', '54'); ?></p>
@@ -37,7 +37,7 @@ Version: 1.0
                                 <?php } ?>
                             </div>
                             <?php } ?>
-                            <div class="col-xs-12 col-md-6 col-lg-4">
+                            <div class="col-xs-6 col-md-6 col-lg-4">
                                 <div class="footer__info address__info">
                                     <p><?php echo get_field('address_text_footer_main_page', '54'); ?></p>
                                     <p><?php echo get_field('address_footer_main_page', '54'); ?></p>

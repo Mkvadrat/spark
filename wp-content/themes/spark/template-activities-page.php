@@ -8,6 +8,7 @@ get_header();
 
     <div class="content">
         <div class="content__top pad-l pad-r">
+            <hr class="line-none"/ >
             <h1><?php the_title(); ?></h1>
             <hr/>
             

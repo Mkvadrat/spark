@@ -41,7 +41,37 @@ get_header();
                     </div>
                 </div>
             </div>
+            <div class="slider-opacity">
+                <div class="owl-carousel owl-theme owl-loaded">
+                  <div class="owl-stage-outer">
+                    <div class="owl-stage">
+                      <div class="owl-item">
+                        <img src="/wp-content/themes/spark/images/slid1.jpg">
+                      </div>
+                      <div class="owl-item"> 
+                         <img src="/wp-content/themes/spark/images/slid2.jpg">
+                      </div>
+                      <div class="owl-item"> 
+                         <img src="/wp-content/themes/spark/images/slid3.jpg">
+                      </div>
+                      <div class="owl-item"> 
+                         <img src="/wp-content/themes/spark/images/slider4.jpg">
+                      </div>
+                      <div class="owl-item"> 
+                         <img src="/wp-content/themes/spark/images/slid2.jpg">
+                      </div>
+                       <div class="owl-dots">
+                        <div class="owl-dot active"><span></span></div>
+                        <div class="owl-dot"><span></span></div>
+                        <div class="owl-dot"><span></span></div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
         </div>
+        
     </div>
 
 <?php get_footer(); ?>

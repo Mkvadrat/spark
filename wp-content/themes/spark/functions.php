@@ -23,6 +23,9 @@ function mk_scripts(){
 	wp_register_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.css');
 	wp_enqueue_style( 'bootstrap-css' );
 	
+	wp_register_style( 'animate-css', get_template_directory_uri() . '/css/animate.css');
+	wp_enqueue_style( 'animate-css' );
+
 	wp_register_style( 'mmenu-css', get_template_directory_uri() . '/css/mmenu.css');
 	wp_enqueue_style( 'mmenu-css' );
 
@@ -31,6 +34,9 @@ function mk_scripts(){
 	
 	wp_register_style( 'carousel-css', get_template_directory_uri() . '/css/owl.carousel.min.css');
 	wp_enqueue_style( 'carousel-css' );
+
+	wp_register_style( 'magnific-popup', get_template_directory_uri() . '/css/magnific-popup.css');
+	wp_enqueue_style( 'magnific-popup' );
 	
 	wp_register_style( 'styles-css', get_template_directory_uri() . '/css/styles.css');
 	wp_enqueue_style( 'styles-css' );
@@ -41,10 +47,16 @@ function mk_scripts(){
 	if (!is_admin()) {
 		wp_enqueue_script( 'maps-min', 'https://api-maps.yandex.ru/2.1/?apikey=74a6de3b-56bf-4d43-9c69-9060da92721c&load=package.full&lang=ru-RU', '', '', false );
 		wp_enqueue_script( 'jquery-min', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', '', '', true );
+		wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.js', '', '', true );
+		wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/parallax.js', '', '', true );
 		wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/js/bootstrap.js', '', '', true );
 		wp_enqueue_script( 'mmenu-min', get_template_directory_uri() . '/js/mmenu.js', '', '', true );
 		wp_enqueue_script( 'carousel-min', get_template_directory_uri() . '/js/owl.carousel.min.js', '', '', true );
+		wp_enqueue_script( 'magnific-popup', get_template_directory_uri() . '/js/magnific-popup.js', '', '', true );
+		wp_enqueue_script( 'scroll', get_template_directory_uri() . '/js/scroll.js', '', '', true );
 		wp_enqueue_script( 'custom-min', get_template_directory_uri() . '/js/custom.js', '', '', true );
+		wp_enqueue_script( 'parallaxCode', get_template_directory_uri() . '/js/parallaxCode.js', '', '', true );
+		
 	}
 }
 add_action( 'wp_enqueue_scripts', 'mk_scripts' );
