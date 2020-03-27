@@ -1,5 +1,3 @@
-
-
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -52,8 +50,6 @@ $(document).ready(function () {
 
 
  $(document).ready(function(){
-   
- 
   var owl = $("#owl-slider");
   owl.owlCarousel({
     loop: true,
@@ -76,24 +72,23 @@ $(document).ready(function () {
    }
 });
 
-
 $(document).ready(function(){
-  $(".owl-carousel").owlCarousel( {
-    loop: true,
-    // mergeFit: true,
-    nav: true,
-    // dotsEach: true,
-    // autoWidth: false,
-    onInitialized: coverFlowEfx,
-    onTranslate: coverFlowEfx,
-  }).on('changed.owl.carousel', function(argv) {
-    console.log(argv)
-  }).on('changed.owl.carousel', function(argv) {
-    console.log(argv)
-  });
+ $('.timer').countTo();
+ $(".owl-carousel").owlCarousel( {
+   loop: true,
+   // mergeFit: true,
+   nav: true,
+   // dotsEach: true,
+   // autoWidth: false,
+   onInitialized: coverFlowEfx,
+   onTranslate: coverFlowEfx,
+ }).on('changed.owl.carousel', function() {
+   $('.timer').countTo('restart');
+ }).on('translated.owl.carousel', function() {
+   $('.timer').countTo('restart');
+ });
 });
 
-  
  function coverFlowEfx(e){
   idx = e.item.index;
   $('.owl-item.active').removeClass('active');
@@ -163,6 +158,7 @@ $('#owl-carousel').owlCarousel({
     autoplayTimeout:7000,
     autoplayHoverPause:false,
 })
+
 $('#owl').owlCarousel({
     loop: true,
     dots: true,
@@ -205,7 +201,6 @@ $(document).ready(function() {
 			duration: 300 // don't foget to change the duration also in CSS
 		}
 	});
-
 });
 
 

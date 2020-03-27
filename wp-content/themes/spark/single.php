@@ -42,7 +42,9 @@ get_header();
                         <?php if( have_rows('gallery_news_post_page')){ ?>
                         <div class="grid__gallery">
                             <?php while ( have_rows('gallery_news_post_page') ) { the_row(); ?>
-                            <img src="<?php echo get_sub_field('image_news_post_page'); ?>" alt=""/>
+                                <a href="<?php echo get_sub_field('image_news_post_page'); ?>" data-fancybox="gallery" data-caption="<?php echo get_sub_field('text_news_post_page'); ?>">
+                                    <img src="<?php echo get_sub_field('image_news_post_page'); ?>" alt=""/>
+                                </a>
                             <?php } ?>
                         </div>
                         <?php } ?>
