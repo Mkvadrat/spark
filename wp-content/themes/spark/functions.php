@@ -50,8 +50,8 @@ function mk_scripts(){
 	if (!is_admin()) {
 		wp_enqueue_script( 'maps-min', 'https://api-maps.yandex.ru/2.1/?apikey=74a6de3b-56bf-4d43-9c69-9060da92721c&load=package.full&lang=ru-RU', '', '', false );
 		wp_enqueue_script( 'jquery-min', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', '', '', true );
+		wp_enqueue_script( 'TweenMax', get_template_directory_uri() . '/js/tweenMax.js', '', '', true );
 		wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.js', '', '', true );
-		wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/parallax.js', '', '', true );
 		wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/js/bootstrap.js', '', '', true );
 		wp_enqueue_script( 'fancybox-min', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js', '', '', true );
 		wp_enqueue_script( 'mmenu-min', get_template_directory_uri() . '/js/mmenu.js', '', '', true );
@@ -59,7 +59,10 @@ function mk_scripts(){
 		wp_enqueue_script( 'magnific-popup', get_template_directory_uri() . '/js/magnific-popup.js', '', '', true );
 		wp_enqueue_script( 'scroll', get_template_directory_uri() . '/js/scroll.js', '', '', true );
 		wp_enqueue_script( 'custom-min', get_template_directory_uri() . '/js/custom.js', '', '', true );
-		wp_enqueue_script( 'parallaxCode', get_template_directory_uri() . '/js/parallaxCode.js', '', '', true );
+		wp_enqueue_script( 'parallax-img', get_template_directory_uri() . '/js/parallax-img.js', '', '', true );
+		// wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/parallax.js', '', '', true );
+		// wp_enqueue_script( 'parallaxCode', get_template_directory_uri() . '/js/parallaxCode.js', '', '', true );
+
 		wp_enqueue_script( 'countTo', get_template_directory_uri() . '/js/jquery.countTo.js', '', '', true );
 	}
 }
@@ -105,7 +108,7 @@ if(function_exists('register_nav_menus')){
 $args = array(
 	'width'         => 367,
 	'height'        => 49,
-	'default-image' => get_template_directory_uri() . '/images/logo.png',
+	'default-image' => get_template_directory_uri() . '/images/logo.svg',
 	'uploads'       => true,
 );
 add_theme_support( 'custom-header', $args );

@@ -42,23 +42,44 @@ get_header();
                 </div>
             </div>
             <div class="slider-opacity">
-                <div class="owl-carousel owl-theme owl-loaded">
+                <div id="owl-history" class="owl-carousel owl-theme owl-loaded">
                   <div class="owl-stage-outer">
                     <div class="owl-stage">
                       <div class="owl-item">
-                        <img src="/wp-content/themes/spark/images/slid1.jpg">
+                        <img src="/wp-content/themes/spark/images/1.jpg">
                       </div>
-                      <div class="owl-item"> 
-                         <img src="/wp-content/themes/spark/images/slid2.jpg">
+                      <div class="owl-item">
+                        <img src="/wp-content/themes/spark/images/2.jpg">
                       </div>
-                      <div class="owl-item"> 
-                         <img src="/wp-content/themes/spark/images/slid3.jpg">
+                      <div class="owl-item">
+                        <img src="/wp-content/themes/spark/images/3.jpg">
                       </div>
-                      <div class="owl-item"> 
-                         <img src="/wp-content/themes/spark/images/slider4.jpg">
+                      <div class="owl-item">
+                        <img src="/wp-content/themes/spark/images/4.jpg">
                       </div>
-                      <div class="owl-item"> 
-                         <img src="/wp-content/themes/spark/images/slid2.jpg">
+                      <div class="owl-item">
+                        <img src="/wp-content/themes/spark/images/5.jpg">
+                      </div>
+                      <div class="owl-item">
+                        <img src="/wp-content/themes/spark/images/6.jpg">
+                      </div>
+                      <div class="owl-item">
+                        <img src="/wp-content/themes/spark/images/7.jpg">
+                      </div>
+                      <div class="owl-item">
+                        <img src="/wp-content/themes/spark/images/8.jpg">
+                      </div>
+                      <div class="owl-item">
+                        <img src="/wp-content/themes/spark/images/9.jpg">
+                      </div>
+                      <div class="owl-item">
+                        <img src="/wp-content/themes/spark/images/10.jpg">
+                      </div>
+                      <div class="owl-item">
+                        <img src="/wp-content/themes/spark/images/11.jpg">
+                      </div>
+                      <div class="owl-item">
+                        <img src="/wp-content/themes/spark/images/12.jpg">
                       </div>
                        <div class="owl-dots">
                         <div class="owl-dot active"><span></span></div>
@@ -74,4 +95,4 @@ get_header();
         
     </div>
 
-<?php get_footer(); ?>
+<?php get_footer(); ?> 

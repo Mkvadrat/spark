@@ -21,9 +21,9 @@ Version: 1.0
 <body>
     
 <!-- The page -->
-    <div id="page-preloader" class="preloader">
+<!--     <div id="page-preloader" class="preloader">
       <div class="loader"></div>
-    </div>
+    </div> -->
 	<div class="page <?php if(is_front_page()){ ?>home<?php } ?>">
     	<div class="bg__group">
         <div class="bg__block"></div>
@@ -45,18 +45,15 @@ Version: 1.0
             </div>
             <div class="top">
                 <div class="logo__block "  >
-                    <a href="http://spark.mkvadrat.com/" > 
-                        <img class="wow slideInLeft" src="/wp-content/themes/spark/images/Logo.svg">
-                    </a>
-                  <!--   <p id="bounce" class="am">asdas</p> -->
-                   <!--  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
-                        <img
-                          src="<?php header_image(); ?>"
-                          height="<?php echo get_custom_header()->height; ?>"
-                          width="<?php echo get_custom_header()->width; ?>"
-                          alt="logotype"
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" >
+                        <img class="wow slideInLeft"
+                            src="<?php header_image(); ?>"
+                            height="<?php echo get_custom_header()->height; ?>"
+                            width="<?php echo get_custom_header()->width; ?>"
+                            alt="logotype"
                         />
-                    </a> -->
+                    </a>
+                
                     <div class="logo__text wow slideInLeft"  data-wow-delay="0.1s"><?php echo get_field('text_logo_header_main_page', '54'); ?></div>
                 </div>
                 

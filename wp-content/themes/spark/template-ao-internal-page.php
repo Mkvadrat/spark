@@ -42,7 +42,7 @@ get_header();
                             <div class="grid__category">
                                 <?php while ( have_rows('links_block_a_activities_page', 163) ) { the_row(); ?>
                                 <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category">
-                                    <div class="category__img"><img src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
+                                    <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
                                     <div class="category__text"><?php echo get_sub_field('title_activities_page'); ?></div>
                                 </a>
                                 <?php } ?>

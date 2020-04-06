@@ -14,12 +14,23 @@ Follow variables are useable :
 ?>
 
 <?php if (!defined ('ABSPATH')) die ('No direct access allowed'); ?><?php if (!empty ($gallery)) : ?>
-<div class="owl-carousel mb7">
-<?php foreach ( $images as $image ) { ?>
+
+<div id="owl" class="owl-carousel owl-theme">
+	<?php foreach ( $images as $image ) { ?>
+   <div class="item">
+		<img title="<?php echo esc_attr($image->alttext) ?>" alt="<?php echo esc_attr($image->alttext) ?>" src="<?php echo nextgen_esc_url($image->thumbnailURL) ?>" <?php echo $image->size ?> />               
+		<div class="slider-title">
+			<?php echo esc_attr($image->alttext) ?>
+		</div>
+   </div> 
+   <?php } ?>
+</div>
+<!--<div class="owl-carousel mb7">
+<?php /*foreach ( $images as $image ) { ?>
 	<div>
 		<img title="<?php echo esc_attr($image->alttext) ?>" alt="<?php echo esc_attr($image->alttext) ?>" src="<?php echo nextgen_esc_url($image->thumbnailURL) ?>" <?php echo $image->size ?> />
 		<div class="carousel__title"><?php echo esc_attr($image->alttext) ?></div>
 	</div>
-<?php } ?>
-</div>
+<?php }*/ ?>
+</div>-->
 <?php endif; ?>

@@ -143,6 +143,7 @@
 }
 
 @media screen and (max-width: 992px) {
+
     .abs__img {
         right: auto;
         left: 50%;
@@ -181,9 +182,9 @@
     }
 
     .section__fixed .top {
-        justify-content: center;
+        justify-content: flex-start;
         flex-wrap: wrap;
-        text-align: center;
+        text-align: left;
         padding: 0;
     }
 
@@ -193,14 +194,14 @@
         margin-top: 20px;
     }
 
-    .logo__text {
+   /* .logo__text {
         font-size: 10px;
         line-height: 16px;
         text-align: center;
         max-width: 80%;
         margin-left: 10%;
         margin-top: 5px;
-    }
+    }*/
 
     .home .content {
         padding-top: 140px;
