@@ -8,11 +8,9 @@ get_header();
 
     <div class="content">
         <div class="content__top pad-l pad-r">
-            <h1><?php the_title(); ?></h1>
-            <hr/>
-            
-            <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
-            
+            <h1 class="revealator-slideup"><?php the_title(); ?></h1>
+            <hr class="opacity-border revealator-slideup"/ >
+           <div class="revealator-slideup">  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
             <div class="container-fluid">
                 <div class="row">
                     <div>
@@ -21,14 +19,14 @@ get_header();
                         <div class="description__full">
                             <?php echo get_field('full_descr_history_page'); ?>
                             
-                            <h3><?php echo get_field('title_event_history_page'); ?></h3>
+                            <h3 class="revealator-slideup "><?php echo get_field('title_event_history_page'); ?></h3>
                             
                             <?php if( have_rows('table_event_history_page')){ ?>
                             <hr/>
                             <table class="table__history">
                                 <tbody>
                                     <?php while ( have_rows('table_event_history_page') ) { the_row(); ?>
-                                    <tr>  
+                                    <tr class="revealator-slideup ">  
                                         <td><?php echo get_sub_field('date_event_history_page'); ?></td>
                                         <td>–</td>
                                         <td><?php echo get_sub_field('event_history_page'); ?></td>
@@ -41,7 +39,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="slider-opacity">
+            <div class="slider-opacity revealator-slideup">
                 <div id="owl-history" class="owl-carousel owl-theme owl-loaded">
                   <div class="owl-stage-outer">
                     <div class="owl-stage">

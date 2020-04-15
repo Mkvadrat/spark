@@ -21,9 +21,9 @@ Version: 1.0
 <body>
     
 <!-- The page -->
-<!--     <div id="page-preloader" class="preloader">
+    <div id="page-preloader" class="preloader">
       <div class="loader"></div>
-    </div> -->
+    </div>
 	<div class="page <?php if(is_front_page()){ ?>home<?php } ?>">
     	<div class="bg__group">
         <div class="bg__block"></div>
@@ -37,16 +37,16 @@ Version: 1.0
         <div class="header header-scroll">
             <div class="top-left">
                 <div class="languages__block">
-                    <span class="active wow fadeIn"><a href="<?php echo get_field('ru_header_main_page', '54'); ?>">RU</a></span>
-                    <span class="wow fadeIn" data-wow-delay="0.2s" ><a href="<?php echo get_field('en_header_main_page', '54'); ?>">EN</a></span>
-                    <span class="wow fadeIn" data-wow-delay="0.8s"><a href="<?php echo get_field('es_header_main_page', '54'); ?>">ES</a></span>
+                    <span class="active wow fadeInUp"><a href="<?php echo get_field('ru_header_main_page', '54'); ?>">RU</a></span>
+                    <span class="wow fadeInUp" data-wow-delay="0.2s" ><a href="<?php echo get_field('en_header_main_page', '54'); ?>">EN</a></span>
+                    <span class="wow fadeInUp" data-wow-delay="0.8s"><a href="<?php echo get_field('es_header_main_page', '54'); ?>">ES</a></span>
                 </div>
               
             </div>
             <div class="top">
                 <div class="logo__block "  >
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" >
-                        <img class="wow slideInLeft"
+                        <img class="wow slideInUp"
                             src="<?php header_image(); ?>"
                             height="<?php echo get_custom_header()->height; ?>"
                             width="<?php echo get_custom_header()->width; ?>"
@@ -54,11 +54,11 @@ Version: 1.0
                         />
                     </a>
                 
-                    <div class="logo__text wow slideInLeft"  data-wow-delay="0.1s"><?php echo get_field('text_logo_header_main_page', '54'); ?></div>
+                    <div class="logo__text wow slideInUp"  data-wow-delay="0.1s"><?php echo get_field('text_logo_header_main_page', '54'); ?></div>
                 </div>
                 
                 <?php if(is_front_page()){ ?>
-                <div class="title__block wow slideInRight" ><?php echo get_field('title_central_header_main_page', '54'); ?></div>
+                <div class="title__block wow slideInUp" ><?php echo get_field('title_central_header_main_page', '54'); ?></div>
                 <?php } ?>
             </div>
         </div>
@@ -69,7 +69,7 @@ Version: 1.0
         </a>
     </div>
 
-    <div class="sidebar__left">
+    <div class="sidebar__left wow slideInUp ">
         <div class="menu" >
             <div class="btn-group-vertical">
                 <?php

@@ -17,10 +17,10 @@ get_header();
    
    <div class="content">
         <div class="content__top pad-l pad-r">
-            <h1><?php echo $category->name; ?></h1>
-            <hr/>
+            <h1 class="revealator-slideup"><?php echo $category->name; ?></h1>
+            <hr class="opacity-border revealator-slideup"/>
            
-            <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+          <div class="revealator-slideup">  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
             
             <div class="container-fluid">
                 <div class="row">
@@ -44,7 +44,7 @@ get_header();
                                  $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
                            ?>
                            
-                              <div class="item__news">
+                              <div class="item__news revealator-slideup">
                                  <a href="<?php echo get_permalink($post->ID); ?>" class="news">
                                     <div class="img__news" style="background-image:url('<?php echo $image_url[0] ? $image_url[0] : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>');"></div>
                                        <div class="title__news">
@@ -75,7 +75,7 @@ get_header();
                         <nav aria-label="Page navigation">
                            <ul class="pagination">
                               <?php foreach ($pagination as $pag){ ?>
-                                 <li class="page-item"><?php echo $pag; ?></li>
+                                 <li class="page-item revealator-slideup"><?php echo $pag; ?></li>
                               <?php } ?>
                            </ul>
                         </nav>

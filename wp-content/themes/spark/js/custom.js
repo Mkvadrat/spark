@@ -1,12 +1,41 @@
+// var map = new Datamap({element: document.getElementById('mapsMain')});
+
+Revealator.scroll_padding = '220';
+Revealator.effects_padding = '-220';
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+ if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+  document.getElementById("navbar").style.top = "0";
+ } else {
+  document.getElementById("navbar").style.top = "-100px";
+ }
+}
+
+document.body.onload = function(){
+ new WOW({
+   mobile: false
+ }).init();
+ var preloader = document.getElementById('page-preloader');
+ if( !preloader.classList.contains('done')){
+  preloader.classList.add('done');
+ }
+}
+
+document.addEventListener(
+ "DOMContentLoaded", () => {
+  new Mmenu("#menu", {
+    "extensions": [
+    "pagedim-black",
+    "position-left"
+   ]
+  });
+ }
+);
+
 $(document).ready(function () {
- $('.anchors__block a[href*="#"]').on('click', function (event) {
-  $('.anchors__block a').toggleClass('active');
-  const anchor = $(this);
-  $('html, body').stop().animate({
-      scrollTop: $(anchor.attr('href')).offset().top
-  }, 1000);
-  event.preventDefault();
- });
+
  
  $('.product__content .owl-carousel').owlCarousel({
   loop: true,
@@ -14,9 +43,11 @@ $(document).ready(function () {
   nav: true,
   dots: false,
   margin: 10,
-  autoplay:true,
+  autoplay:false,
   autoplayTimeout:3000,  
   autoplayHoverPause:false,
+  autoHeight:true,
+  autoHeightClass: 'owl-height'
   // navText: ["<img src='/wp-content/themes/spark/images/left-car.svg'/>", "<img src='/wp-content/themes/spark/images/right-kar.svg'/>"]
  });
  
@@ -51,6 +82,8 @@ $(document).ready(function () {
   loop: true,
   nav: false,
   items:1,
+  autoplay:true,
+  autoplayTimeout:3000,  
   onInitialized: coverFlowEfx,
   onTranslate: coverFlowEfx,
  }).on('changed.owl.carousel', function() {
@@ -101,35 +134,6 @@ $(document).ready(function () {
   }
  });
 });
-
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
- if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-  document.getElementById("navbar").style.top = "0";
- } else {
-  document.getElementById("navbar").style.top = "-100px";
- }
-}
-
-/*document.body.onload = function(){
- new WOW().init();
- var preloader = document.getElementById('page-preloader');
- if( !preloader.classList.contains('done')){
-  preloader.classList.add('done');
- }
-}*/
-
-document.addEventListener(
- "DOMContentLoaded", () => {
-  new Mmenu("#menu", {
-    "extensions": [
-    "pagedim-black",
-    "position-left"
-   ]
-  });
- }
-);
 
 function customPager(property){
  var current = property.item.index;

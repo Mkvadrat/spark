@@ -9,15 +9,15 @@ get_header();
     <div class="content">
         <?php $image_url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'full'); ?>
         <?php if ($image_url[0]){ ?>
-        <img src="<?php echo $image_url[0]; ?>" class="abs__img"/>
+       <!--  <img src="<?php echo $image_url[0]; ?>" class="abs__img"/> -->
         <?php } ?>
         
         <div class="content__top pad-l pad-r">
-            <h1><?php the_title(); ?></h1>
-            <hr/>
+            <h1 class="revealator-slideup"><?php the_title(); ?></h1>
+            <hr class="opacity-border revealator-slideup"/>
             
-            <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
-            <hr/>
+            <div class="revealator-slideup">  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+
             
             <div class="container-fluid">
                 <div class="row">
@@ -41,7 +41,7 @@ get_header();
                         <div class="right__sidebar">
                             <div class="grid__category">
                                 <?php while ( have_rows('links_block_a_activities_page', 163) ) { the_row(); ?>
-                                <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category">
+                                <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category revealator-slideup">
                                     <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
                                     <div class="category__text"><?php echo get_sub_field('title_activities_page'); ?></div>
                                 </a>

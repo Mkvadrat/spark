@@ -13,12 +13,12 @@ get_header();
     
     <div class="content">
         <div class="content__top pad-l pad-r">
-            <div class="h1__news">
+            <div class="h1__news revealator-slideup">
                 <h1><?php the_title(); ?></h1>
                 <div class="news__action">
-                    <div class="news__date"><?php echo get_the_date( 'd.m.y', get_the_ID() ); ?></div>
+                    <div class="news__date revealator-slideup"><?php echo get_the_date( 'd.m.y', get_the_ID() ); ?></div>
                     
-                    <div class="news__share">
+                    <div class="news__share revealator-slideup">
                         <?php
                             if ( function_exists('dynamic_sidebar') )
                                 dynamic_sidebar('sharing-page');
@@ -26,15 +26,15 @@ get_header();
                     </div>
                 </div>
             </div>
-            <hr/>
+            <hr class="opacity-border revealator-slideup"/>
             
-            <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+           <div class="revealator-slideup"> <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
             <div class="container-fluid">
                 <div class="row">
                     <div>
                         <?php $image_url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'full'); ?>
                         <?php if($image_url[0]){ ?>
-                            <img src="<?php echo $image_url[0]; ?>" alt="" class="mb7"/>
+                            <img src="<?php echo $image_url[0]; ?>" alt="" class="mb7 "/>
                         <?php } ?>
                         
                         <?php echo get_field('text_news_post_page'); ?>
@@ -43,7 +43,7 @@ get_header();
                         <div class="grid__gallery">
                             <?php while ( have_rows('gallery_news_post_page') ) { the_row(); ?>
                                 <a href="<?php echo get_sub_field('image_news_post_page'); ?>" data-fancybox="gallery" data-caption="<?php echo get_sub_field('text_news_post_page'); ?>">
-                                    <img src="<?php echo get_sub_field('image_news_post_page'); ?>" alt=""/>
+                                    <img class="revealator-slideup" src="<?php echo get_sub_field('image_news_post_page'); ?>" alt=""/>
                                 </a>
                             <?php } ?>
                         </div>
@@ -72,7 +72,7 @@ get_header();
                                 $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
                             ?>
                             <div class="item__news">
-                                <a href="<?php echo get_permalink($post->ID); ?>" class="news">
+                                <a href="<?php echo get_permalink($post->ID); ?>" class="news revealator-slideup">
                                     <div class="img__news" style="background-image:url('<?php echo $image_url[0] ? $image_url[0] : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>');"></div>
                                     <div class="title__news">
                                         <div class="info__news">
