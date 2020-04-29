@@ -12,7 +12,7 @@ get_header();
        <!--  <img src="<?php echo $image_url[0]; ?>" class="abs__img"/> -->
         <?php } ?>
         
-        <div class="content__top pad-l pad-r">
+        <div class="content__top pad-l pad-r pad-r-product">
             <h1 class="revealator-slideup"><?php the_title(); ?></h1>
             <hr class="opacity-border revealator-slideup"/>
             
@@ -39,7 +39,7 @@ get_header();
 
                         <?php if( have_rows('links_block_a_activities_page', 163)){ ?>
                         <div class="right__sidebar">
-                            <div class="grid__category">
+                            <div class="grid__category grid__category-big">
                                 <?php while ( have_rows('links_block_a_activities_page', 163) ) { the_row(); ?>
                                 <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category revealator-slideup">
                                     <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>

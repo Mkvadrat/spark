@@ -29,6 +29,9 @@ function mk_scripts(){
 	wp_register_style( 'animate-css', get_template_directory_uri() . '/css/animate.css');
 	wp_enqueue_style( 'animate-css' );
 
+	wp_register_style( 'aos-css', get_template_directory_uri() . '/css/aos.css');
+	wp_enqueue_style( 'aos-css' );
+
 	wp_register_style( 'mmenu-css', get_template_directory_uri() . '/css/mmenu.css');
 	wp_enqueue_style( 'mmenu-css' );
 
@@ -54,14 +57,19 @@ function mk_scripts(){
 		wp_enqueue_script( 'jquery-min', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', '', '', true );
 		wp_enqueue_script( 'revealator-js', get_template_directory_uri() . '/js/revealator.js', '', '', true );
 		wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.js', '', '', true );
+		wp_enqueue_script( 'TweenMax', get_template_directory_uri() . '/js/tweenMax.js', '', '', true );
 		wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/js/bootstrap.js', '', '', true );
 		wp_enqueue_script( 'fancybox-min', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js', '', '', true );
 		wp_enqueue_script( 'mmenu-min', get_template_directory_uri() . '/js/mmenu.js', '', '', true );
 		wp_enqueue_script( 'carousel-min', get_template_directory_uri() . '/js/owl.carousel.min.js', '', '', true );
 		wp_enqueue_script( 'magnific-popup', get_template_directory_uri() . '/js/magnific-popup.js', '', '', true );
+		wp_enqueue_script( 'aos', get_template_directory_uri() . '/js/aos.js', '', '', true );
 		wp_enqueue_script( 'scroll', get_template_directory_uri() . '/js/scroll.js', '', '', true );
+		wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/parallax.min.js', '', '', false );
+		//wp_enqueue_script( 'parallax-img', get_template_directory_uri() . '/js/parallax-img.js', '', '', true );
+		//wp_enqueue_script( 'parallaxCode', get_template_directory_uri() . '/js/parallaxCode.js', '', '', true );
 		wp_enqueue_script( 'custom-min', get_template_directory_uri() . '/js/custom.js', '', '', true );
-		wp_enqueue_script( 'countTo', get_template_directory_uri() . '/js/jquery.countTo.js', '', '', true );
+		//wp_enqueue_script( 'countTo', get_template_directory_uri() . '/js/jquery.countTo.js', '', '', true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'mk_scripts' );
@@ -151,16 +159,6 @@ function register_my_widgets(){
 	) );
 }
 add_action( 'widgets_init', 'register_my_widgets' );
-
-// add to functions.php
-/*add_action('init', 'add_NGG_actions_to_acf');
-function add_NGG_actions_to_acf() {
-  if (class_exists('C_NextGen_Shortcode_Manager')) {
-    $instance = C_NextGen_Shortcode_Manager::get_instance();
-    add_filter('acf_the_content', array(&$instance, 'fix_nested_shortcodes'), -1);
-    add_filter('acf_the_content', array(&$instance, 'parse_content'), PHP_INT_MAX);
-  }
-}*/
 
 /**********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************
@@ -645,3 +643,62 @@ function create_taxonomies_vacancy() {
     ));
 }
 add_action( 'init', 'create_taxonomies_vacancy', 0 );
+
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+*********************************************************************"РАЗДЕЛ КАРТА МИРА"*******************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+function register_post_type_maps() {
+	$labels = array(
+	 'name' => 'Страны мира',
+	 'singular_name' => 'Страны мира',
+	 'add_new' => 'Добавить статью',
+	 'add_new_item' => 'Добавить новую статью',
+	 'edit_item' => 'Редактировать статью',
+	 'new_item' => 'Новая статья',
+	 'all_items' => 'Все статьи',
+	 'view_item' => 'Просмотр статей на сайте',
+	 'search_items' => 'Искать статьи',
+	 'not_found' => 'Статьи не найдены.',
+	 'not_found_in_trash' => 'В корзине нет статей.',
+	 'menu_name' => 'Страны мира'
+	);
+
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'exclude_from_search' => true,
+		'show_ui' => true,
+		'has_archive' => false,
+		'menu_icon' => 'dashicons-admin-site-alt3',
+		'menu_position' => 20,
+		'supports' =>  array('title','editor'),
+		'publicly_queryable'  => false,
+		'query_var'           => false
+	 );
+ 	register_post_type('maps', $args);
+}
+add_action( 'init', 'register_post_type_maps' );
+
+function true_post_type_maps( $maps ) {
+
+	global $post, $post_ID;
+
+	$faq['maps'] = array(
+		0 => '',
+		1 => sprintf( 'Статьи обновлены. <a href="%s">Просмотр</a>', esc_url( get_permalink($post_ID) ) ),
+		2 => 'Статьи обновлёны.',
+		3 => 'Статья удалёна.',
+		4 => 'Статья обновлена.',
+		5 => isset($_GET['revision']) ? sprintf( 'Статья восстановлена из редакции: %s', wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+		6 => sprintf( 'Статья опубликована на сайте. <a href="%s">Просмотр</a>', esc_url( get_permalink($post_ID) ) ),
+		7 => 'Статья сохранена.',
+		8 => sprintf( 'Отправлен на проверку. <a target="_blank" href="%s">Просмотр</a>', esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+		9 => sprintf( 'Запланирован на публикацию: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Просмотр</a>', date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+		10 => sprintf( 'Черновик обновлён. <a target="_blank" href="%s">Просмотр</a>', esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+	);
+
+	return $maps;
+}
+add_filter( 'post_updated_messages', 'true_post_type_maps' );

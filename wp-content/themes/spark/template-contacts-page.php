@@ -25,13 +25,11 @@ get_header();
                         <div class="anchors__content">
                             <div id="spark__ao">
                                 <h2 class="revealator-slideup"><?php echo get_field('title_a_block_a_contacts_page'); ?></h2>
-                                
-                                
-                                
+
                                 <?php if( have_rows('personal_a_block_a_contacts_page')){ ?>
                                 <div class="grid__category mb-7">
                                     <?php while ( have_rows('personal_a_block_a_contacts_page') ) { the_row(); ?>
-                                    <div class="item__category revealator-slideup ">
+                                    <div class="item__category  no-hover revealator-slideup ">
                                         <div class="category__img-contact"><img src="<?php echo get_sub_field('image_contacts_page'); ?>" alt="cont"/></div>
                                         <div class="category__text">
                                             <div class="title__"><?php echo get_sub_field('name_contacts_page'); ?></div>
@@ -44,62 +42,70 @@ get_header();
                                     <?php } ?>
                                 </div>
                                 <?php } ?>
+
                                 <?php if( have_rows('contact_a_block_a_contacts_page')){ ?>
-                                <div class="grid__position">
-                                    <?php while ( have_rows('contact_a_block_a_contacts_page') ) { the_row(); ?>
-                                    <div class="item__position">
-                                        <div class="position__info ">
-                                            <div class="revealator-slideup"><?php echo get_sub_field('name_contacts_page'); ?></div>
-                                            <p class="revealator-slideup revealator-delay1"><?php echo get_sub_field('value_contacts_page'); ?></p>
-                                        </div>
-                                    </div>
-                                    <?php } ?>
-                                    
-                                    <?php if(get_field('coord_maps_a_block_a_contacts_page')){ ?>
-                                    <div class="item__position">
-                                        <div id="piter" class="maps revealator-slideup " style="width:100%; height:338px"></div>
-                                    </div>
-                                    <?php } ?>
-                                </div>
-                                <?php } ?>
-                                <h2 class="revealator-slideup "><?php echo get_field('title_b_block_a_contacts_page'); ?></h2>
-                                
-                                <?php if( have_rows('contact_b_block_a_contacts_page') || have_rows('personal_b_block_a_contacts_page')){ ?>
-                                <div class="grid__position mb-7">
-                                    <div class="item__position">
-                                        <div class=""> <?php if( have_rows('contact_b_block_a_contacts_page')){ ?></div>
-                                        <?php while ( have_rows('contact_b_block_a_contacts_page') ) { the_row(); ?>
-                                        <div class="position__info">
-                                            <div class="revealator-slideup"><?php echo get_sub_field('name_contacts_page'); ?></div>
-                                            <p class="revealator-slideup"><?php echo get_sub_field('value_contacts_page'); ?></p>
-                                        </div>
-                                        <?php } ?>
-                                        <?php } ?>
-                                        
-                                        <?php if( have_rows('personal_b_block_a_contacts_page')){ ?>
-                                        <?php while ( have_rows('personal_b_block_a_contacts_page') ) { the_row(); ?>
-                                        <div class="item__category w-100 revealator-slideup">
-                                            <div class="category__img-contact"><img src="<?php echo get_sub_field('image_contacts_page'); ?>" alt="cont"/></div>
-                                            <div class="category__text">
-                                                <div class="title__"><?php echo get_sub_field('name_contacts_page'); ?></div>
-                                                <div class="state__"><?php echo get_sub_field('position_contacts_page'); ?></div>
-                                                <div class="actions__">
-                                                    <?php echo get_sub_field('contact_contacts_page'); ?>
-                                                </div>
+                                <div class="block-contact-info">
+                                    <div class="block-contact-address">
+                                        <?php while ( have_rows('contact_a_block_a_contacts_page') ) { the_row(); ?>
+                                        <div >
+                                            <div >
+                                                <div class="revealator-slideup"><?php echo get_sub_field('name_contacts_page'); ?></div>
+                                                <p class="revealator-slideup"><?php echo get_sub_field('value_contacts_page'); ?></p>
                                             </div>
                                         </div>
                                         <?php } ?>
-                                        <?php } ?>
                                     </div>
                                     
-                                    <?php if(get_field('coord_maps_b_block_a_contacts_page')){ ?>
-                                    <div class="item__position">
-                                        <div id="moskow" class="maps revealator-slideup" style="width:100%; height:338px"></div>
+                                    <div class="map-contact">
+                                        <?php if(get_field('coord_maps_a_block_b_contacts_page')){ ?>
+                                        <div class="revealator-slideup">
+                                            <div id="piter" class="maps-footer" ></div>
+                                        </div>
+                                        <?php } ?>
                                     </div>
-                                    <?php } ?>
                                 </div>
                                 <?php } ?>
                                 
+                                <h2 class="revealator-slideup top-margin-contact"><?php echo get_field('title_b_block_a_contacts_page'); ?></h2>
+                                
+                                <?php if( have_rows('personal_b_block_a_contacts_page')){ ?>
+                                <?php while ( have_rows('personal_b_block_a_contacts_page') ) { the_row(); ?>
+                                <div class="item__category no-hover item__padding  w-100 revealator-slideup">
+                                    <div class="category__img-contact"><img src="<?php echo get_sub_field('image_contacts_page'); ?>" alt="cont"/></div>
+                                    <div class="category__text">
+                                        <div class="title__"><?php echo get_sub_field('name_contacts_page'); ?></div>
+                                        <div class="state__"><?php echo get_sub_field('position_contacts_page'); ?></div>
+                                        <div class="actions__">
+                                            <?php echo get_sub_field('contact_contacts_page'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                <?php } ?>
+
+                                <?php if( have_rows('contact_b_block_a_contacts_page')){ ?>
+                                <div class="block-contact-info">
+                                    <div class="block-contact-address">
+                                        <?php while ( have_rows('contact_b_block_a_contacts_page') ) { the_row(); ?>
+                                        <div >
+                                            <div >
+                                                <div class="revealator-slideup"><?php echo get_sub_field('name_contacts_page'); ?></div>
+                                                <p class="revealator-slideup"><?php echo get_sub_field('value_contacts_page'); ?></p>
+                                            </div>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                    
+                                    <div class="map-contact">
+                                        <?php if(get_field('coord_maps_a_block_b_contacts_page')){ ?>
+                                        <div class="revealator-slideup">
+                                            <div id="moskow" class="maps-footer" ></div>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <?php } ?>
+
                                 <?php
                                     $forms_a = get_field('content_ao_form_block_contacts_page');
                                          if($forms_a){
@@ -119,7 +125,7 @@ get_header();
                                  <?php if( have_rows('personal_block_b_contacts_page')){ ?>
                                 <div class="grid__category mb-7">
                                     <?php while ( have_rows('personal_block_b_contacts_page') ) { the_row(); ?>
-                                    <div class="item__category revealator-slideup">
+                                    <div class="item__category  no-hover revealator-slideup">
                                         <div class="category__img-contact"><img src="<?php echo get_sub_field('image_contacts_page'); ?>" alt="cont"/></div>
                                         <div class="category__text">
                                             <div class="title__"><?php echo get_sub_field('name_contacts_page'); ?></div>
@@ -134,35 +140,38 @@ get_header();
                                 <?php } ?>
 
                                 <?php if( have_rows('contact_block_b_contacts_page')){ ?>
-                                <div class="grid__position">
-                                    <?php while ( have_rows('contact_block_b_contacts_page') ) { the_row(); ?>
-                                    <div class="item__position">
-                                        <div class="position__info">
-                                            <div class="revealator-slideup"><?php echo get_sub_field('name_contacts_page'); ?></div>
-                                            <p class="revealator-slideup"><?php echo get_sub_field('value_contacts_page'); ?></p>
+                                <div class="block-contact-info">
+                                    <div class="block-contact-address">
+                                        <?php while ( have_rows('contact_block_b_contacts_page') ) { the_row(); ?>
+                                        <div >
+                                            <div >
+                                                <div class="revealator-slideup"><?php echo get_sub_field('name_contacts_page'); ?></div>
+                                                <p class="revealator-slideup"><?php echo get_sub_field('value_contacts_page'); ?></p>
+                                            </div>
                                         </div>
+                                        <?php } ?>
                                     </div>
-                                    <?php } ?>
                                     
-                                    <?php if(get_field('coord_maps_a_block_b_contacts_page')){ ?>
-                                    <div class="item__position">
-                                        <div id="piter2" class="maps revealator-slideup" style="width:100%; height:338px"></div>
+                                    <div class="map-contact">
+                                        <?php if(get_field('coord_maps_a_block_b_contacts_page')){ ?>
+                                        <div class="revealator-slideup">
+                                            <div id="piter2" class="maps-footer" ></div>
+                                        </div>
+                                        <?php } ?>
                                     </div>
-                                    <?php } ?>
                                 </div>
                                 <?php } ?>
-                                
-                               
-                                 <?php
+
+                                <?php
                                     $forms_b = get_field('content_npo_form_block_contacts_page');
-                                         if($forms_b){
+                                        if($forms_b){
                                 ?>
                                 
                                 <h2><?php echo get_field('title_npo_form_block_contacts_page'); ?></h2>
                                 
                                 <div class="form">
                                     <?php
-                                            echo do_shortcode('[contact-form-7 id=" ' . $forms_b . ' "]'); 
+                                        echo do_shortcode('[contact-form-7 id=" ' . $forms_b . ' "]'); 
                                     ?>
                                 </div>
                                 <?php } ?>

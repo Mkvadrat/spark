@@ -7,11 +7,11 @@ get_header();
 ?>
 
     <div class="content">
-        <div class="content__top pad-l pad-r">
-            <h1 class="revealator-slideup"><?php the_title(); ?></h1>
-            <hr  class="opacity-border revealator-slideup"/>
+        <div class="content__top pad-l pad-r pad-r-executives">
+            <h1 ><?php the_title(); ?></h1>
+            <hr  class="opacity-border"/>
             
-           <div class="revealator-slideup">
+           <div>
                <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
            </div> 
             

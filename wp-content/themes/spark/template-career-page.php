@@ -11,7 +11,7 @@ get_header();
             <h1 class="revealator-slideup"><?php the_title(); ?></h1>
             <hr class="opacity-border revealator-slideup"/>
             <div class="revealator-slideup">  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
-
+            <?php echo get_field('main_text_block_career_page'); ?>
             <div class="container-fluid">
                 <div class="row">
                     <div>

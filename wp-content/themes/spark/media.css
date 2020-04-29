@@ -105,6 +105,9 @@
 }
 
 @media all and (max-width: 1300px) {
+   .block-contact-info{
+        flex-direction: column;
+    }
     .item__news,
     .career__item,
     .item__position {

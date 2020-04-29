@@ -1,7 +1,13 @@
 // var map = new Datamap({element: document.getElementById('mapsMain')});
 
-Revealator.scroll_padding = '220';
-Revealator.effects_padding = '-220';
+
+
+ AOS.init({
+
+});
+
+Revealator.scroll_padding = '150';
+Revealator.effects_padding = '-150';
 
 window.onscroll = function() {scrollFunction()};
 
@@ -36,15 +42,22 @@ document.addEventListener(
 
 $(document).ready(function () {
 
- 
+ $('.anchors__block a[href*="#"]').on('click', function (event) {
+        $('.anchors__block a').toggleClass('active');
+        const anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top
+        }, 1000);
+        event.preventDefault();
+    });
  $('.product__content .owl-carousel').owlCarousel({
   loop: true,
   items: 1,
   nav: true,
   dots: false,
   margin: 10,
-  autoplay:false,
-  autoplayTimeout:3000,  
+  autoplay:true,
+  autoplayTimeout:4000,  
   autoplayHoverPause:false,
   autoHeight:true,
   autoHeightClass: 'owl-height'
@@ -61,6 +74,8 @@ $(document).ready(function () {
   slideSpeed : 300,
   paginationSpeed : 500,
   singleItem:true, 
+  autoplayTimeout:100,  
+  autoplayHoverPause:false,
   transitionStyle : "goDown",
   onInitialized:customPager,  
   onChanged:customPager 
@@ -76,9 +91,9 @@ $(document).ready(function () {
   onTranslate: coverFlowEfx,
  });
  
- $('.timer').countTo();
+ //$('.timer').countTo();
  
- $('#main-text').owlCarousel( {
+ /*$('#main-text').owlCarousel( {
   loop: true,
   nav: false,
   items:1,
@@ -90,7 +105,7 @@ $(document).ready(function () {
   $('.timer').countTo('restart');
  }).on('translated.owl.carousel', function() {
   $('.timer').countTo('restart');
- });
+ });*/
  
  $('#owl-carousel').owlCarousel({
   loop: true,
@@ -135,11 +150,14 @@ $(document).ready(function () {
  });
 });
 
+
+
 function customPager(property){
  var current = property.item.index;
  var prevSrc = $(property.target).find(".owl-item").eq(current - 1).find("img").attr("src");
  var nextSrc = $(property.target).find(".owl-item").eq(current + 1).find("img").attr("src");
 }
+
 
 function coverFlowEfx(e){
  idx = e.item.index;

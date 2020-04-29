@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitcbd038d0e6fda9665671ad46ec9594a2
+class ComposerStaticInitb2e9b6c6be0bcb0789f9a2c43c2d9861
 {
     public static $files = array (
         'c4ed057a6919e316c176e816418cc6a3' => __DIR__ . '/..' . '/reactr-io/pope-framework/lib/autoload.php',
@@ -27,8 +27,8 @@ class ComposerStaticInitcbd038d0e6fda9665671ad46ec9594a2
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitcbd038d0e6fda9665671ad46ec9594a2::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitcbd038d0e6fda9665671ad46ec9594a2::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb2e9b6c6be0bcb0789f9a2c43c2d9861::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb2e9b6c6be0bcb0789f9a2c43c2d9861::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

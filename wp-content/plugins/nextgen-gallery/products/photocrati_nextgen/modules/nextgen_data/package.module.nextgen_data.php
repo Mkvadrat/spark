@@ -714,7 +714,7 @@ class Mixin_NextGen_Gallery_Validation
         }
         $ABSPATH = wp_normalize_path(ABSPATH);
         // Disallow galleries from being under these directories at all
-        $not_ever_in = array('plugins' => wp_normalize_path(WP_PLUGIN_DIR), 'must use plugins' => wp_normalize_path(WPMU_PLUGIN_DIR), 'wp-admin' => $fs->join_paths($ABSPATH, 'wp-admin'), 'wp-includes' => $fs->join_paths($ABSPATH, 'wp-admin'), 'themes' => get_theme_root());
+        $not_ever_in = array('plugins' => wp_normalize_path(WP_PLUGIN_DIR), 'must use plugins' => wp_normalize_path(WPMU_PLUGIN_DIR), 'wp-admin' => $fs->join_paths($ABSPATH, 'wp-admin'), 'wp-includes' => $fs->join_paths($ABSPATH, 'wp-includes'), 'themes' => get_theme_root());
         foreach ($not_ever_in as $label => $dir) {
             if (strpos($abspath, $dir) === 0) {
                 $this->object->add_error(sprintf(__("Gallery path cannot be under %s directory", 'nggallery'), $label), 'gallerypath');
@@ -4256,7 +4256,7 @@ class Mixin_GalleryStorage_Base_Getters extends Mixin
     }
     function get_gallery_root()
     {
-        return wp_normalize_path(NGG_GALLERY_ROOT_TYPE == 'content' ? WP_CONTENT_DIR : ABSPATH);
+        return wp_normalize_path(C_Fs::get_instance()->get_document_root('galleries'));
     }
     function _get_computed_gallery_abspath($gallery)
     {

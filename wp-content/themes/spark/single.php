@@ -12,7 +12,7 @@ get_header();
 ?>
     
     <div class="content">
-        <div class="content__top pad-l pad-r">
+        <div class="content__top pad-l pad-r pad-r-news">
             <div class="h1__news revealator-slideup">
                 <h1><?php the_title(); ?></h1>
                 <div class="news__action">

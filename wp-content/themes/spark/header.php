@@ -20,7 +20,7 @@ Version: 1.0
 </head>
 <body>
     
-<!-- The page -->
+    <!-- The page -->
     <div id="page-preloader" class="preloader">
       <div class="loader"></div>
     </div>
@@ -29,11 +29,10 @@ Version: 1.0
         <div class="bg__block"></div>
     </div>
   	 
-
     <div class="section__fixed">
-    	<div id="navbar">
-	 	<a href="#"><img src="/wp-content/themes/spark/images/logo-scroll.svg"/></a>
-	 </div>
+        <div id="navbar">
+            <a href="#"><img src="/wp-content/themes/spark/images/logo-scroll.svg"/></a>
+        </div>
         <div class="header header-scroll">
             <div class="top-left">
                 <div class="languages__block">
@@ -97,15 +96,19 @@ Version: 1.0
             </div>
         </div>
         <div class="contact__block wow slideInUp">
-            <?php if(get_field('phone_header_main_page', '54')){ ?>
-            <div class="icon__block"><img src="/wp-content/themes/spark/images/phone.png" width="19"/></div>
-            <?php } ?>
             <div class="action__block">
                 <?php if(get_field('phone_header_main_page', '54')){ ?>
                 <a href="tel:<?php echo str_replace([' ', '(', ')', '-'], '', get_field('phone_header_main_page', '54')); ?>"><?php echo get_field('phone_header_main_page', '54'); ?></a>
                 <?php } ?>
-                
-                <a href="mailto:info@sparc.spb.ru"><?php echo get_field('email_header_main_page', '54'); ?></a>
+                <div class="footer__info address__info">
+                    <a href="mailto:<?php echo get_field('email_header_main_page', '54'); ?>"><?php echo get_field('email_header_main_page', '54'); ?></a>
+                    <div class="adress-footer">
+                        <p><?php echo get_field('address_header_main_page', '54'); ?></p>
+                    </div>
+                </div>
+                <div class="footer__info address__info">
+                    <a href="<?php echo get_field('link_driving_header_main_page', '54'); ?>"><?php echo get_field('text_driving_header_main_page', '54'); ?></a>
+                </div>     
             </div>
         </div>
     </div>

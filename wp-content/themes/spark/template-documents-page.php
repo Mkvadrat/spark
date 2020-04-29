@@ -14,7 +14,7 @@ get_header();
             <div  class="revealator-slideup">
                 <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
             </div>
-             <?php echo get_field('text_block_documents_page'); ?>
+            <!-- <?php echo get_field('text_block_documents_page'); ?> -->
             <div class="container-fluid">
                 <div class="row">
                     <div>

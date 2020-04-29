@@ -1,17 +1,1 @@
-<svg id="m2-logo" xmlns="http://www.w3.org/2000/svg" width="42.404" height="42.404" viewBox="0 0 42.404 42.404">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #c90007;
-      }
-
-      .cls-2 {
-        fill: #fff;
-      }
-    </style>
-  </defs>
-  <g id="Слой_1" data-name="Слой 1">
-    <rect id="Rectangle_59" data-name="Rectangle 59" class="cls-1" width="42.404" height="42.404"/>
-    <path id="Path_27" data-name="Path 27" class="cls-2" d="M161.294,172.659H145.029l10.934-10.934a1.6,1.6,0,1,0-2.265-2.265l-7.749,7.749-4.4-4.4v9.78H137.56V153.18l8.388,8.388,4.929-4.929a5.591,5.591,0,1,1,7.907,7.907l-4.124,4.124h6.635Z" transform="translate(-127.761 -142.268)"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="23.735" height="19.479"><g data-name="Слой 1"><path data-name="Path 27" d="M23.734 19.479H7.469L18.403 8.545a1.602 1.602 0 1 0-2.265-2.265l-7.749 7.749-4.4-4.4v9.78H0V0l8.388 8.388 4.929-4.929a5.591 5.591 0 0 1 7.907 7.907L17.1 15.49h6.635z" fill="#fff"/></g></svg>

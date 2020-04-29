@@ -17,8 +17,8 @@ Follow variables are useable :
 
 <div id="owl" class="owl-carousel owl-theme">
 	<?php foreach ( $images as $image ) { ?>
-   <div class="item">
-		<img title="<?php echo esc_attr($image->alttext) ?>" alt="<?php echo esc_attr($image->alttext) ?>" src="<?php echo nextgen_esc_url($image->thumbnailURL) ?>" <?php echo $image->size ?> />               
+   <div class="item" style="background-image: url('<?php echo nextgen_esc_url($image->thumbnailURL) ?>');">
+		<!-- <img title="<?php echo esc_attr($image->alttext) ?>" alt="<?php echo esc_attr($image->alttext) ?>" src="<?php echo nextgen_esc_url($image->thumbnailURL) ?>" <?php echo $image->size ?> />              -->  
 		<div class="slider-title">
 			<?php echo esc_attr($image->alttext) ?>
 		</div>

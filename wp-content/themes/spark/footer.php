@@ -12,57 +12,19 @@ Version: 1.0
     <footer>
         <div class="footer pad-l">
             <div class="row">
-                <div class="col-xs-12">
-                    <div class="row">
-                        <?php if(get_field('phone_footer_main_page', '54') || get_field('fax_footer_main_page', '54') || get_field('email_footer_main_page', '54')){ ?>
-                        <div class="col-xs-6 col-md-6 col-lg-4">
-                            <?php if(get_field('phone_text_footer_main_page', '54')){ ?>
-                            <div class="footer__info revealator-slideup " >
-                                <p><?php echo get_field('phone_text_footer_main_page', '54'); ?></p>
-                                <a href="tel:<?php echo str_replace([' ', '(', ')', '-'], '', get_field('phone_footer_main_page', '54')); ?>"><?php echo get_field('phone_footer_main_page', '54'); ?></a>
-                            </div>
-                            <?php } ?>
-                            <?php if(get_field('fax_text_footer_main_page', '54')){ ?>
-                            <div class="footer__info revealator-slideup revealator-delay1">
-                                <p><?php echo get_field('fax_text_footer_main_page', '54'); ?></p>
-                                <a href="tel:<?php echo str_replace([' ', '(', ')', '-'], '', get_field('fax_footer_main_page', '54')); ?>"><?php echo get_field('fax_footer_main_page', '54'); ?></a>
-                            </div>
-                            <?php } ?>
-                            <?php if(get_field('email_footer_main_page', '54')){ ?>
-                            <div class="footer__info revealator-slideup revealator-delay3" >
-                                <p><?php echo get_field('email_text_footer_main_page', '54'); ?></p>
-                                <a href="mailto:<?php echo get_field('email_footer_main_page', '54'); ?>"><?php echo get_field('email_footer_main_page', '54'); ?></a>
-                            </div>
-                            <?php } ?>
-                        </div>
-                        <?php } ?>
-                        <div class="col-xs-6 col-md-6 col-lg-4">
-                            <div class="footer__info address__info revealator-slideup revealator-delay4 " >
-                                <p><?php echo get_field('address_text_footer_main_page', '54'); ?></p>
-                                <p><?php echo get_field('address_footer_main_page', '54'); ?></p>
-                            </div>
-                            <div class="footer__info address__info  revealator-slideup revealator-delay5     " >
-                                <a href="#">Схема проезда</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
                 <div class=" col-xl-12">
-                    <div class="row d-flex inter__block">
+                    <div class="row d-flex inter__block " >
                         <div class="col-xs-12 ">
-                            <div class="footer__text  revealator-slideup revealator-delay4" ><?php echo get_field('inf_text_footer_main_page', '54'); ?></div>
+                            <div class="footer__text"  data-aos="fade-up" data-aos-offset="0" ><?php echo get_field('inf_text_footer_main_page', '54'); ?></div>
                         </div>
                         <div class="col-xs-12  ">
-                            <div class="d-flex inter  " >
-                                <div class="revealator-slideup revealator-delay5">
+                            <div class="d-flex inter" data-aos="fade-up" data-aos-offset="0">
+                                <div class="copy-block">
                                     <?php echo get_field('date_text_footer_main_page', '54'); ?>
                                 </div>
-                                <div class="revealator-slideup revealator-delay6">
+                                <div data-aos="fade-up" data-aos-offset="0">
                                     <?php echo get_field('powered_footer_main_page', '54'); ?>
                                 </div>
-                               
                             </div>
                         </div>
                     </div>
