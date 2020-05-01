@@ -931,6 +931,18 @@
     }
 }   
 @media screen and (max-width: 992px) {
+    #back2Top img {
+        float: left;
+        margin: 2px 0px 0 11px;
+        padding: 7px 0;
+    }
+    #back2Top{
+        width: 41px;
+        border-radius: 50%;
+    }
+    #back2Top span{
+        display: none;
+    }
     .mob-block {
         height: 100vh;
         display: flex;

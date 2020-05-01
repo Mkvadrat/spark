@@ -8,6 +8,7 @@ Description: Тема для сайта http://mkvadrat.com/
 Version: 1.0
 */
 ?>
+    <a id="back2Top"  href="#"> <img src="/wp-content/themes/spark/images/arr-up.svg"> <span>Наверх</span></a>
 
     <footer>
         <div class="footer pad-l">

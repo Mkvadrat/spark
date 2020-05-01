@@ -23,6 +23,65 @@ body {
     line-height: 24px;
     text-align: left;
 }
+#back2Top {
+    margin: 0 14px 0 20px;
+    width: 100px;
+    line-height: 40px;
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+   /* -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);*/
+    position: fixed;
+    bottom: 70px;
+    right: 0; 
+    background: #1d2437;
+    border: 1px solid #4c5162;
+   color: #ffffff;
+    text-align: center;
+   font-size: 14px;
+    text-decoration: underline;
+    opacity: 0.4;
+    border-radius: 30px;
+}
+
+
+/*#back2Top {
+
+margin: 0 14px 0 20px;
+width: 100px;
+background: #1d2437;
+border: 1px solid #4c5162;
+opacity: 0.4;
+line-height: 40px;
+overflow: hidden;
+z-index: 999;
+display: none;
+cursor: pointer;
+position: fixed;
+bottom: 50px;
+color: #ffffff;
+text-align: center;
+font-size: 14px;
+right: 0;
+transition: all 0.5s;
+text-decoration: underline;
+}*/
+#back2Top img{
+ float: left;
+margin: 9px -6px 0 6px;
+}
+/*#back2Top {
+  display: flex;
+  align-items: center;
+}*/
+#back2Top:hover {
+   opacity: 1;
+}
 
 .planet {
   background-size: cover;

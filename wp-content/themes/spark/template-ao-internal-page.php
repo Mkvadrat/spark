@@ -37,14 +37,25 @@ get_header();
                             </div>-->
                         </div>
 
-                        <?php if( have_rows('links_block_a_activities_page', 163)){ ?>
+                        <?php if( have_rows('links_block_a_activities_page', 163) || have_rows('links_block_b_activities_page', 163)){ ?>
                         <div class="right__sidebar">
                             <div class="grid__category grid__category-big">
+                                <?php if( have_rows('links_block_a_activities_page', 163) ) {?>
                                 <?php while ( have_rows('links_block_a_activities_page', 163) ) { the_row(); ?>
                                 <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category revealator-slideup">
                                     <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
                                     <div class="category__text"><?php echo get_sub_field('title_activities_page'); ?></div>
                                 </a>
+                                <?php } ?>
+                                <?php } ?>
+                                
+                                <?php if( have_rows('links_block_b_activities_page', 163) ) {?>
+                                <?php while ( have_rows('links_block_b_activities_page', 163) ) { the_row(); ?>
+                                <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category revealator-slideup">
+                                    <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
+                                    <div class="category__text"><?php echo get_sub_field('title_activities_page'); ?></div>
+                                </a>
+                                <?php } ?>
                                 <?php } ?>
                             </div>
                         </div>
