@@ -34,14 +34,27 @@ Version: 1.0
             <a href="#"><img src="/wp-content/themes/spark/images/logo-scroll.svg"/></a>
         </div>
         <div class="header header-scroll">
+            <?php 
+                $languages = icl_get_languages('skip_missing=0&orderby=code');
+                if(!empty($languages)){
+            ?>
             <div class="top-left">
                 <div class="languages__block">
-                    <span class="active wow fadeInUp"><a href="<?php echo get_field('ru_header_main_page', '54'); ?>">RU</a></span>
-                    <span class="wow fadeInUp" data-wow-delay="0.2s" ><a href="<?php echo get_field('en_header_main_page', '54'); ?>">EN</a></span>
-                    <span class="wow fadeInUp" data-wow-delay="0.8s"><a href="<?php echo get_field('es_header_main_page', '54'); ?>">ES</a></span>
+            <?php 
+                foreach($languages as $l){
+                    if(!$l['active'])
+                    echo '<span class="active wow fadeInUp"><a class="wpml-ls-item" href="'.$l['url'].'">';
+                    echo $l['tag'];
+                    if(!$l['active'])
+                    echo '</a></span>';
+                }
+            ?>
                 </div>
-              
             </div>
+            <?php
+                }
+            ?>
+
             <div class="top">
                 <div class="logo__block "  >
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" >

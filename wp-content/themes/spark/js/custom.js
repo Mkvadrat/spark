@@ -1,8 +1,5 @@
 // var map = new Datamap({element: document.getElementById('mapsMain')});
-
-
-
- AOS.init({
+AOS.init({
 
 });
 
@@ -83,6 +80,7 @@ $(document).ready(function () {
 
  $("#owl-history").owlCarousel( {
   loop: true,
+  items:1,
   nav: true,
   autoplay:true,
   autoplayTimeout:3000,  
@@ -150,14 +148,11 @@ $(document).ready(function () {
  });
 });
 
-
-
 function customPager(property){
  var current = property.item.index;
  var prevSrc = $(property.target).find(".owl-item").eq(current - 1).find("img").attr("src");
  var nextSrc = $(property.target).find(".owl-item").eq(current + 1).find("img").attr("src");
 }
-
 
 function coverFlowEfx(e){
  idx = e.item.index;
@@ -171,9 +166,6 @@ function coverFlowEfx(e){
  $('.owl-item').eq(idx + 1).addClass('a1');
  $('.owl-item').eq(idx + 2).addClass('a2');
 }
-
-
-
 
 /*Scroll to top when arrow up clicked BEGIN*/
 $(window).scroll(function() {

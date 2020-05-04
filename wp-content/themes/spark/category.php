@@ -20,12 +20,12 @@ get_header();
             <h1 class="revealator-slideup"><?php echo $category->name; ?></h1>
             <hr class="opacity-border revealator-slideup"/>
            
-          <div class="revealator-slideup">  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+          <div class="revealator-slideup"> <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
             
             <div class="container-fluid">
                 <div class="row">
                     <div>
-                        <div class="grid__news">
+                        <div class="grid__news revealator-slideup">
                            <?php 
                               $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
                               $args = array(
@@ -33,7 +33,7 @@ get_header();
                                  'orderby'     => 'date',
                                  'order'       => 'DESC',
                                  'post_type'   => 'post',
-                                 'suppress_filters' => true, 
+                                 'suppress_filters' => false, 
                                  'posts_per_page' => $GLOBALS['wp_query']->query_vars['posts_per_page'],
                                  'paged'       => $current_page
                               );
@@ -43,8 +43,7 @@ get_header();
                                  foreach($posts as $post){ setup_postdata($post);
                                  $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
                            ?>
-                           
-                              <div class="item__news revealator-slideup">
+                              <div class="item__news">
                                  <a href="<?php echo get_permalink($post->ID); ?>" class="news">
                                     <div class="img__news" style="background-image:url('<?php echo $image_url[0] ? $image_url[0] : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>');"></div>
                                        <div class="title__news">
