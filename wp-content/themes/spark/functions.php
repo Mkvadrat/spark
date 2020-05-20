@@ -57,6 +57,8 @@ function mk_scripts(){
 		wp_enqueue_script( 'jquery-min', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', '', '', true );
 		wp_enqueue_script( 'revealator-js', get_template_directory_uri() . '/js/revealator.js', '', '', true );
 		wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.js', '', '', true );
+		
+		
 		wp_enqueue_script( 'TweenMax', get_template_directory_uri() . '/js/tweenMax.js', '', '', true );
 		wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/js/bootstrap.js', '', '', true );
 		wp_enqueue_script( 'fancybox-min', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js', '', '', true );
@@ -377,15 +379,34 @@ class mobile_menu extends Walker_Nav_Menu {
 ***********************************************************************************************************************************************************/
 function dimox_breadcrumbs() {
 	/* === ОПЦИИ === */
-	$text['home'] = 'Главная'; // текст ссылки "Главная"
+ 
+	if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english
+		$text['home'] = 'Home'; // текст ссылки "Главная"
+		$text['search'] = 'Search Results for "%s"'; // текст для страницы с результатами поиска
+		$text['tag'] = 'Posts Tagged "%s"'; // текст для страницы тега
+		$text['author'] = 'Articles author  %s'; // текст для страницы автора
+		$text['404'] = 'Error 404'; // текст для страницы 404
+		$text['page'] = 'Page %s'; // текст 'Страница N'
+		$text['cpage'] = 'Comments page %s'; // текст 'Страница комментариев N'
+	}elseif(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'es'){ //spanish
+		$text['home'] = 'Inicio'; // текст ссылки "Главная"
+		$text['search'] = 'Resultados de búsqueda para "%s"'; // текст для страницы с результатами поиска
+		$text['tag'] = 'Posts etiquetados "%s"'; // текст для страницы тега
+		$text['author'] = 'Artículos de autor %s'; // текст для страницы автора
+		$text['404'] = 'Error 404'; // текст для страницы 404
+		$text['page'] = 'Pagina %s'; // текст 'Страница N'
+		$text['cpage'] = 'Página de comentarios %s'; // текст 'Страница комментариев N'
+	}else{
+		$text['home'] = 'Главная'; // текст ссылки "Главная"
+		$text['search'] = 'Результаты поиска по запросу "%s"'; // текст для страницы с результатами поиска
+		$text['tag'] = 'Записи с тегом "%s"'; // текст для страницы тега
+		$text['author'] = 'Статьи автора %s'; // текст для страницы автора
+		$text['404'] = 'Ошибка 404'; // текст для страницы 404
+		$text['page'] = 'Страница %s'; // текст 'Страница N'
+		$text['cpage'] = 'Страница комментариев %s'; // текст 'Страница комментариев N'
+	}
+
 	$text['category'] = '%s'; // текст для страницы рубрики
-	$text['search'] = 'Результаты поиска по запросу "%s"'; // текст для страницы с результатами поиска
-	$text['tag'] = 'Записи с тегом "%s"'; // текст для страницы тега
-	$text['author'] = 'Статьи автора %s'; // текст для страницы автора
-	$text['404'] = 'Ошибка 404'; // текст для страницы 404
-	$text['page'] = 'Страница %s'; // текст 'Страница N'
-	$text['cpage'] = 'Страница комментариев %s'; // текст 'Страница комментариев N'
-  
 	$wrap_before = '<ol class="breadcrumb">'; // открывающий тег обертки
 	$wrap_after = '</ol>'; // закрывающий тег обертки
 	$sep = ''; // разделитель между "крошками"

@@ -13,10 +13,10 @@ get_header();
         <?php } ?>
         
         <div class="content__top pad-l pad-r pad-r-product">
-            <h1 class="revealator-slideup"><?php the_title(); ?></h1>
-            <hr class="opacity-border revealator-slideup"/>
+            <h1 class="wow slideInUp"><?php the_title(); ?></h1>
+            <hr class="opacity-border wow slideInUp"/>
             
-            <div class="revealator-slideup">  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+            <div class="wow slideInUp">  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
 
             
             <div class="container-fluid">
@@ -36,30 +36,88 @@ get_header();
                                 </div>
                             </div>-->
                         </div>
-
-                        <?php if( have_rows('links_block_a_activities_page', 163) || have_rows('links_block_b_activities_page', 163)){ ?>
-                        <div class="right__sidebar">
-                            <div class="grid__category grid__category-big">
-                                <?php if( have_rows('links_block_a_activities_page', 163) ) {?>
-                                <?php while ( have_rows('links_block_a_activities_page', 163) ) { the_row(); ?>
-                                <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category revealator-slideup">
-                                    <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
-                                    <div class="category__text"><?php echo get_sub_field('title_activities_page'); ?></div>
-                                </a>
+                        
+                        <?php 
+                            if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english
+                            ?>
+                                <?php if( have_rows('links_block_a_activities_page', 1572) || have_rows('links_block_b_activities_page', 163)){ ?>
+                                <div class="right__sidebar">
+                                    <div class="grid__category grid__category-big">
+                                        <?php if( have_rows('links_block_a_activities_page', 1572) ) {?>
+                                        <?php while ( have_rows('links_block_a_activities_page', 1572) ) { the_row(); ?>
+                                        <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category revealator-slideup">
+                                            <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
+                                            <div class="category__text"><?php echo get_sub_field('title_activities_page'); ?></div>
+                                        </a>
+                                        <?php } ?>
+                                        <?php } ?>
+                                        
+                                        <?php if( have_rows('links_block_b_activities_page', 1572) ) {?>
+                                        <?php while ( have_rows('links_block_b_activities_page', 1572) ) { the_row(); ?>
+                                        <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category revealator-slideup">
+                                            <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
+                                            <div class="category__text"><?php echo get_sub_field('title_activities_page'); ?></div>
+                                        </a>
+                                        <?php } ?>
+                                        <?php } ?>
+                                    </div>
+                                </div>
                                 <?php } ?>
+                            <?php
+                            }elseif(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'es'){ //spanish
+                            ?>
+                                <?php if( have_rows('links_block_a_activities_page', 1573) || have_rows('links_block_b_activities_page', 1573)){ ?>
+                                <div class="right__sidebar">
+                                    <div class="grid__category grid__category-big">
+                                        <?php if( have_rows('links_block_a_activities_page', 1573) ) {?>
+                                        <?php while ( have_rows('links_block_a_activities_page', 1573) ) { the_row(); ?>
+                                        <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category revealator-slideup">
+                                            <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
+                                            <div class="category__text"><?php echo get_sub_field('title_activities_page'); ?></div>
+                                        </a>
+                                        <?php } ?>
+                                        <?php } ?>
+                                        
+                                        <?php if( have_rows('links_block_b_activities_page', 1573) ) {?>
+                                        <?php while ( have_rows('links_block_b_activities_page', 1573) ) { the_row(); ?>
+                                        <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category revealator-slideup">
+                                            <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
+                                            <div class="category__text"><?php echo get_sub_field('title_activities_page'); ?></div>
+                                        </a>
+                                        <?php } ?>
+                                        <?php } ?>
+                                    </div>
+                                </div>
                                 <?php } ?>
-                                
-                                <?php if( have_rows('links_block_b_activities_page', 163) ) {?>
-                                <?php while ( have_rows('links_block_b_activities_page', 163) ) { the_row(); ?>
-                                <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category revealator-slideup">
-                                    <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
-                                    <div class="category__text"><?php echo get_sub_field('title_activities_page'); ?></div>
-                                </a>
+                            <?php
+                            }else{
+                            ?>
+                                <?php if( have_rows('links_block_a_activities_page', 163) || have_rows('links_block_b_activities_page', 163)){ ?>
+                                <div class="right__sidebar">
+                                    <div class="grid__category grid__category-big">
+                                        <?php if( have_rows('links_block_a_activities_page', 163) ) {?>
+                                        <?php while ( have_rows('links_block_a_activities_page', 163) ) { the_row(); ?>
+                                        <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category revealator-slideup">
+                                            <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
+                                            <div class="category__text"><?php echo get_sub_field('title_activities_page'); ?></div>
+                                        </a>
+                                        <?php } ?>
+                                        <?php } ?>
+                                        
+                                        <?php if( have_rows('links_block_b_activities_page', 163) ) {?>
+                                        <?php while ( have_rows('links_block_b_activities_page', 163) ) { the_row(); ?>
+                                        <a href="<?php echo get_sub_field('link_activities_page'); ?>" class="item__category revealator-slideup">
+                                            <div class=" category__img radius"><img class="radius" src="<?php echo get_sub_field('image_activities_page') ? get_sub_field('image_activities_page') : esc_url( get_template_directory_uri() ) . '/images/no_image.jpg'; ?>"/></div>
+                                            <div class="category__text"><?php echo get_sub_field('title_activities_page'); ?></div>
+                                        </a>
+                                        <?php } ?>
+                                        <?php } ?>
+                                    </div>
+                                </div>
                                 <?php } ?>
-                                <?php } ?>
-                            </div>
-                        </div>
-                        <?php } ?>
+                            <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </div>

@@ -17,15 +17,15 @@ get_header();
    
    <div class="content">
         <div class="content__top pad-l pad-r">
-            <h1 class="revealator-slideup"><?php echo $category->name; ?></h1>
-            <hr class="opacity-border revealator-slideup"/>
+            <h1 class="wow slideInUp"><?php echo $category->name; ?></h1>
+            <hr class="opacity-border wow slideInUp"/>
            
-          <div class="revealator-slideup"> <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+          <div class="wow slideInUp"> <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
             
             <div class="container-fluid">
                 <div class="row">
                     <div>
-                        <div class="grid__news revealator-slideup">
+                        <div class="grid__news wow slideInUp">
                            <?php 
                               $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
                               $args = array(

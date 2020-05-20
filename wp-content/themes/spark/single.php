@@ -13,12 +13,12 @@ get_header();
     
     <div class="content">
         <div class="content__top pad-l pad-r pad-r-news">
-            <div class="h1__news revealator-slideup">
+            <div class="h1__news wow slideInUp">
                 <h1><?php the_title(); ?></h1>
                 <div class="news__action">
-                    <div class="news__date revealator-slideup"><?php echo get_the_date( 'd.m.y', get_the_ID() ); ?></div>
+                    <div class="news__date wow slideInUp"><?php echo get_the_date( 'd.m.y', get_the_ID() ); ?></div>
                     
-                    <div class="news__share revealator-slideup">
+                    <div class="news__share wow slideInUp">
                         <?php
                             if ( function_exists('dynamic_sidebar') )
                                 dynamic_sidebar('sharing-page');
@@ -26,9 +26,9 @@ get_header();
                     </div>
                 </div>
             </div>
-            <hr class="opacity-border revealator-slideup"/>
+            <hr class="opacity-borderwow slideInUp"/>
             
-           <div class="revealator-slideup"> <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+           <div class=""> <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
             <div class="container-fluid">
                 <div class="row">
                     <div>
@@ -65,7 +65,23 @@ get_header();
                         ?>
                         <?php if($articles_line){ ?>
                         <hr/>
-                        <h4>Смотреть еще новости</h4>
+                        
+                        <?php 
+                            if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english
+                            ?>
+                                <h4>See more news</h4>
+                            <?php
+                            }elseif(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'es'){ //spanish
+                            ?>
+                                <h4>Ver más noticias</h4>
+                            <?php
+                            }else{
+                            ?>
+                                <h4>Смотреть еще новости</h4>
+                            <?php
+                            }
+                        ?>
+                       
                         <div class="grid__news">
                             <?php 
                                 foreach($articles_line as $post){ setup_postdata($post);

@@ -8,23 +8,80 @@ Description: Тема для сайта http://mkvadrat.com/
 Version: 1.0
 */
 ?>
-    <a id="back2Top"  href="#"> <img src="/wp-content/themes/spark/images/arr-up.svg"> <span>Наверх</span></a>
 
+    <?php 
+        if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english
+        ?>
+            <a id="back2Top"  href="#"> <img src="/wp-content/themes/spark/images/arr-up.svg"> <span>Top</span></a>
+        <?php
+        }elseif(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'es'){ //spanish
+        ?>
+            <a id="back2Top"  href="#"> <img src="/wp-content/themes/spark/images/arr-up.svg"> <span>Inicio</span></a>
+        <?php
+        }else{
+        ?>
+            <a id="back2Top"  href="#"> <img src="/wp-content/themes/spark/images/arr-up.svg"> <span>Наверх</span></a>
+        <?php
+        }
+    ?> 
+    
     <footer>
         <div class="footer pad-l">
             <div class="row">
                 <div class=" col-xl-12">
                     <div class="row d-flex inter__block " >
                         <div class="col-xs-12 ">
-                            <div class="footer__text"  data-aos="fade-up" data-aos-offset="0" ><?php echo get_field('inf_text_footer_main_page', '54'); ?></div>
+                            <?php 
+                                if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english
+                                ?>
+                                    <div class="footer__text"  data-aos="fade-up" data-aos-offset="0" ><?php echo get_field('inf_text_footer_main_page', '1219'); ?></div>
+                                <?php
+                                }elseif(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'es'){ //spanish
+                                ?>
+                                    <div class="footer__text"  data-aos="fade-up" data-aos-offset="0" ><?php echo get_field('inf_text_footer_main_page', '1221'); ?></div>
+                                <?php
+                                }else{
+                                ?>
+                                    <div class="footer__text"  data-aos="fade-up" data-aos-offset="0" ><?php echo get_field('inf_text_footer_main_page', '54'); ?></div>
+                                <?php
+                                }
+                            ?> 
                         </div>
                         <div class="col-xs-12  ">
                             <div class="d-flex inter" data-aos="fade-up" data-aos-offset="0">
                                 <div class="copy-block">
-                                    <?php echo get_field('date_text_footer_main_page', '54'); ?>
+                                    <?php 
+                                        if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english
+                                        ?>
+                                            <?php echo get_field('date_text_footer_main_page', '1219'); ?>
+                                        <?php
+                                        }elseif(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'es'){ //spanish
+                                        ?>
+                                            <?php echo get_field('date_text_footer_main_page', '1221'); ?>
+                                        <?php
+                                        }else{
+                                        ?>
+                                            <?php echo get_field('date_text_footer_main_page', '54'); ?>
+                                        <?php
+                                        }
+                                    ?> 
                                 </div>
                                 <div data-aos="fade-up" data-aos-offset="0">
-                                    <?php echo get_field('powered_footer_main_page', '54'); ?>
+                                    <?php 
+                                        if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english
+                                        ?>
+                                            <?php echo get_field('powered_footer_main_page', '1219'); ?>     
+                                        <?php
+                                        }elseif(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'es'){ //spanish
+                                        ?>
+                                            <?php echo get_field('powered_footer_main_page', '1221'); ?>   
+                                        <?php
+                                        }else{
+                                        ?>
+                                            <?php echo get_field('powered_footer_main_page', '54'); ?>  
+                                        <?php
+                                        }
+                                    ?> 
                                 </div>
                             </div>
                         </div>

@@ -8,16 +8,16 @@ get_header();
     
     <div class="content">
         <div class="content__top pad-l pad-r">
-            <h1 class="revealator-slideup"><?php the_title(); ?></h1>
-            <hr class="opacity-border revealator-slideup"/>
-            <div class="revealator-slideup">  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+            <h1 class="wow slideInUp"><?php the_title(); ?></h1>
+            <hr class="opacity-border wow slideInUp"/>
+            <div class="wow slideInUp">  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
             <?php echo get_field('main_text_block_career_page'); ?>
             <div class="container-fluid">
                 <div class="row">
                     <div>
                         <div class="grid__career">
                             <div class="career__item">
-                                <h2 class="revealator-slideup"><?php echo get_field('title_a_block_a_career_page'); ?></h2>
+                                <h2 class="wow slideInUp"><?php echo get_field('title_a_block_a_career_page'); ?></h2>
                                 <div class="career__box">
                                     <?php if(get_field('title_b_block_a_career_page')){ ?>
                                     <h3 class="revealator-slideup"><?php echo get_field('title_b_block_a_career_page'); ?></h3>
@@ -54,7 +54,7 @@ get_header();
                                 </div>
                             </div>
                             <div class="career__item">
-                                <h2 class="revealator-slideup"><?php echo get_field('title_a_block_b_career_page'); ?></h2>
+                                <h2 class="wow slideInUp"><?php echo get_field('title_a_block_b_career_page'); ?></h2>
                                 <div class="career__box">
                                     <?php if(get_field('title_b_block_b_career_page')){ ?>
                                     <h3 class="revealator-slideup"><?php echo get_field('title_b_block_b_career_page'); ?></h3>

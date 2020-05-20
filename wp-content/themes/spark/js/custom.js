@@ -1,10 +1,13 @@
 // var map = new Datamap({element: document.getElementById('mapsMain')});
+
+
+
 AOS.init({
 
 });
 
-Revealator.scroll_padding = '150';
-Revealator.effects_padding = '-150';
+Revealator.scroll_padding = '250';
+Revealator.effects_padding = '-250';
 
 window.onscroll = function() {scrollFunction()};
 
@@ -36,8 +39,14 @@ document.addEventListener(
   });
  }
 );
-
 $(document).ready(function () {
+ $('.dropdown-menu li').each(function() {
+		var element = this;
+  
+  if ($(element).hasClass("active")){
+   $('.nav .dropdown').toggleClass('open');
+  }
+ });
 
  $('.anchors__block a[href*="#"]').on('click', function (event) {
         $('.anchors__block a').toggleClass('active');
@@ -185,3 +194,26 @@ $(document).ready(function() {
 
 });
  /*Scroll to top when arrow up clicked END*/
+
+// tab
+function openCompany(evt, companyName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(companyName).style.display = "block";
+  evt.currentTarget.className += " active";
+  
+}
+document.getElementById("defaultOpen").click();
+// Get the element with id="defaultOpen" and click on it
+
+
+
+
+
