@@ -40,13 +40,13 @@ document.addEventListener(
  }
 );
 $(document).ready(function () {
- $('.dropdown-menu li').each(function() {
+ /*$('.dropdown-menu li').each(function() {
 		var element = this;
   
   if ($(element).hasClass("active")){
    $('.nav .dropdown').toggleClass('open');
   }
- });
+ });*/
 
  $('.anchors__block a[href*="#"]').on('click', function (event) {
         $('.anchors__block a').toggleClass('active');
@@ -210,7 +210,7 @@ function openCompany(evt, companyName) {
   evt.currentTarget.className += " active";
   
 }
-document.getElementById("defaultOpen").click();
+//document.getElementById("defaultOpen").click();
 // Get the element with id="defaultOpen" and click on it
 
 

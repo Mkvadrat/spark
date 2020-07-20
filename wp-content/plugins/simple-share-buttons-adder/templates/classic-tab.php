@@ -44,7 +44,7 @@
 			<div class="ssbp-wrap ssbp--centred ssbp--theme-4">
 				<div class="ssbp-container">
 					<ul id="ssbasort1" class="ssbp-list ssbaSortable">
-						<?php echo wp_kses_post( $this->get_available_ssba( $arr_settings['ssba_selected_buttons'], $arr_settings ) ); ?>
+						<?php echo wp_kses_post( $this->get_available_ssba( $arr_settings['ssba_selected_buttons'], $arr_settings, 'classic' ) ); ?>
 					</ul>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 				<div class="ssbp-wrap ssbp--centred ssbp--theme-4">
 					<div class="ssbp-container">
 						<ul id="ssbasort2" class="ssba-include-list ssbp-list ssbaSortable">
-							<?php echo wp_kses_post( $this->get_selected_ssba( $arr_settings['ssba_selected_buttons'], $arr_settings ) ); ?>
+							<?php echo wp_kses_post( $this->get_selected_ssba( $arr_settings['ssba_selected_buttons'], $arr_settings, 'classic' ) ); ?>
 						</ul>
 					</div>
 				</div>

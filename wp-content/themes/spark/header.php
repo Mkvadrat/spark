@@ -111,28 +111,7 @@ Version: 1.0
     <div class="sidebar__left wow slideInUp ">
         <div class="menu" >
             <div class="btn-group-vertical">
-                <?php
-                    if (has_nav_menu('header_menu')){
-                        wp_nav_menu( array(
-                            'theme_location'  => 'header_menu',
-                            'menu'            => '',
-                            'container'       => false,
-                            'container_class' => '',
-                            'container_id'    => '',
-                            'menu_class'      => '',
-                            'menu_id'         => '',
-                            'echo'            => true,
-                            'fallback_cb'     => 'wp_page_menu',
-                            'before'          => '',
-                            'after'           => '',
-                            'link_before'     => '',
-                            'link_after'      => '',
-                            'items_wrap'      => '<ul class="nav">%3$s</ul>',
-                            'depth'           => 2,
-                            'walker'          => new header_menu(),
-                        ) );
-                    }
-                ?>
+                <?php bellows( 'main' , array( 'theme_location' => 'header_menu' ) ); ?>
             </div>
         </div>
         <div class="contact__block wow slideInUp">
