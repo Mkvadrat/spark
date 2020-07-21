@@ -26,12 +26,42 @@ Version: 1.0
     </div>
 	<div class="page <?php if(is_front_page()){ ?>home<?php } ?>">
     	<div class="bg__group">
+        <?php if(is_front_page()){ ?>
+        <?php 
+            if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english
+            ?>
+                <div class="bg__block">
+                    <video muted loop autoplay oncanplay="this.muted=true" poster="<?php echo get_field('image_header_main_page', '1219'); ?>">
+                        <source src="<?php echo get_field('video_header_main_page', '1219'); ?>" type='video/mp4' />
+                    </video>
+                </div>
+            <?php
+            }elseif(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'es'){ //spanish
+            ?>
+                <div class="bg__block">
+                    <video muted loop autoplay oncanplay="this.muted=true" poster="<?php echo get_field('image_header_main_page', '1221'); ?>">
+                        <source src="<?php echo get_field('video_header_main_page', '1221'); ?>" type='video/mp4' />
+                    </video>
+                </div>
+            <?php
+            }else{
+            ?>
+                <div class="bg__block">
+                    <video muted loop autoplay oncanplay="this.muted=true" poster="<?php echo get_field('image_header_main_page', '54'); ?>">
+                        <source src="<?php echo get_field('video_header_main_page', '54') ? get_field('video_header_main_page', '54') : ''; ?>" type='video/mp4' />
+                    </video>
+                </div>
+            <?php
+            }
+        ?>
+        <?php }else{ ?>
         <div class="bg__block"></div>
+        <?php } ?>
     </div>
-  	 
+        
     <div class="section__fixed">
         <div id="navbar">
-            <a href="#"><img src="/wp-content/themes/spark/images/logo-scroll.svg"/></a>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="/wp-content/themes/spark/images/logo-scroll.svg"/></a>
         </div>
         <div class="header header-scroll">
             <?php 

@@ -98,6 +98,7 @@ $(document).ready(function () {
   onTranslate: coverFlowEfx,
  });
  
+ 
  //$('.timer').countTo();
  
  /*$('#main-text').owlCarousel( {
