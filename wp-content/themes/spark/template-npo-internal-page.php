@@ -1,6 +1,6 @@
 <?php
 /*
-Template name: AO internal page
+Template name: NPO internal page
 */
 
 get_header(); 
@@ -38,7 +38,7 @@ get_header();
                         </div>
                         
                         <div class="right__sidebar">
-                            <?php bellows( 'main' , array( 'theme_location' => 'ao_menu' ) ); ?>
+                            <?php bellows( 'main' , array( 'theme_location' => 'npo_menu' ) ); ?>
                         </div>
                     </div>
                 </div>

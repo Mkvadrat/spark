@@ -55,7 +55,6 @@ function mk_scripts(){
 	wp_register_style( 'media-css', get_template_directory_uri() . '/css/media.css'); 
 	wp_enqueue_style( 'media-css' );
 	
-	
 	if (!is_admin()) {
 		wp_enqueue_script( 'maps-min', 'https://api-maps.yandex.ru/2.1/?apikey=74a6de3b-56bf-4d43-9c69-9060da92721c&load=package.full&lang=ru-RU', '', '', false );
 		wp_enqueue_script( 'jquery-min', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', '', '', false );
@@ -111,6 +110,8 @@ if(function_exists('register_nav_menus')){
 	register_nav_menus(
 		array(
 		  'header_menu'   => 'Главное меню',
+		  'ao_menu'       => 'АО меню',
+		  'npo_menu'      => 'НПО меню',
 		)
 	);
 }
