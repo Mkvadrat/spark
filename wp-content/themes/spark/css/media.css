@@ -39,20 +39,22 @@
         margin: 0 20px 0 0;
     }
     .my-tabs{
-        margin: 0 20px 40px 0px;
+        margin: 150px 20px 40px 0px;
     }
      .pad-r {
         padding-right: 10px;
     }
     .description__pre{
-        padding: 0 40px 0 0;
+        /*padding: 0px 40px 0 0;*/
+        padding: 160px 40px 0 0!important;
     }
     .description__full{
-        padding: 0 20px 0 0!important;
+        padding: 0px 20px 0 0!important;
+       
     }
-    .description__pre{
+    /*.description__pre{
          padding: 0 20px 0 0!important;
-    }
+    }*/
     .pad-r.pad-r-contact{
         padding-right: 20px;
     }
@@ -105,6 +107,7 @@
         height: 20px;
         width: auto;
 	}
+
     .product__content .owl-carousel .owl-item img {
         max-height: 600px;
         min-height: 1px;
@@ -321,6 +324,11 @@
     }
 }
 @media all and (max-width: 1500px) {
+    .right__sidebar {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
     .spark__img{
         height: 300px;
     }
@@ -386,6 +394,7 @@
     }
 }
 @media all and (max-width: 1440px) {
+
     .img__2-block{
         height: 250px;
     }
@@ -431,11 +440,11 @@
         margin: 0;
     }
     .my-tabs{
-        margin: 0 0px 40px 0px;
+        margin: 150px 0px 40px 0px;
     }
-    .description__pre{
+   /* .description__pre{
         padding: 0;
-    }
+    }*/
     .description__full{
         padding: 0 ;
     }
@@ -778,6 +787,12 @@
    }
 }
 @media all and (max-width: 1160px) {
+    .fixet-title{
+        padding: 0 420px 0 0px;
+    }
+    .wow.fadeInUp.breadcrumbs{
+        padding: 0 420px 0 0px;
+    }
     .form-group{
         margin: 0;
     }
@@ -934,6 +949,40 @@
     }
 }   
 @media screen and (max-width: 992px) {
+    .mb7{
+        margin-top: 0px;
+    }
+    .top-fixer-margin-medium{
+        margin-top: 0px!important;
+    }
+    .top-fixer-margin-big{
+        margin-top: 0!important;
+    }
+    .top-fixer-margin{
+        margin-top: 0!important;
+    }
+    .main_text_block_career_page{
+        margin-top: 170px;
+    }
+    .anchors__block.wow.slideInUp{
+        margin-top: 0px;
+    }
+    .fixet-title{
+        position: relative;
+        padding: 0 20px 0 0;
+    }
+    .fixet-block{
+        position: relative;
+        background: transparent;
+        height: 0;
+    }
+    .fixet-block .wow.fadeInUp.breadcrumbs{
+        margin-top: -100px;
+    }
+    .wow.fadeInUp.breadcrumbs{
+        position: relative;
+        padding: 0 20px 0 0;
+    }
     #back2Top img {
         float: left;
         margin: 2px 0px 0 11px;

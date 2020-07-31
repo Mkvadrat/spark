@@ -23,8 +23,264 @@ body {
     line-height: 24px;
     text-align: left;
 }
+.logo__block{
+  position: relative;
+  transition: all 0.8s;
+}
+.anim{
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  /*display: none;*/
+  transition: all 0.8s;
+}
+.animation-logo{
+  stroke: rgb(255,255,255);
+  transition: all 0.8s;
+}
+.logo__block:hover .anim{
+  opacity:1;
+  /*display: block;*/
+  transition: all 0.9s;
+    /* stroke-dasharray: 555px;
+    stroke-dashoffset: 153px;
+   animation: animdash 3s infinite 6s;*/
+}
+/*@keyframes animdash{
+  to{
+      strore-dashoffset:0px;
+  }
+}
+*/.bellows .bellows-nav .bellows-subtoggle .fa{
+  margin-top: -10px;
+}
+/*.bellows .bellows-nav .bellows-active>.bellows-submenu{
+	transition: all 0.5s!important;
+}*/
+.right__sidebar .bellows-target{
+	transition: all 0.5s;
+}
+.right__sidebar .bellows-target:hover{
+	color: #ffffff;
+	opacity: 0.8;
+}
+.right__sidebar .bellows-item-level-1:after{
+	display: none;
+}
+.right__sidebar .bellows-item-level-1:before{
+	display: none;
+}
+.right__sidebar .bellows .bellows-nav .bellows-submenu .bellows-target{
+	margin-bottom: 10px;
+}
+.right__sidebar .bellows .bellows-nav .bellows-submenu .bellows-target
+.mb7{
+	margin-top: 40px;
+}
+.top-fixer-margin-medium{
+	margin-top: 40px!important;
+}
+.top-fixer-margin{
+	margin-top: 160px!important;
+}
+.top-fixer-margin-big{
+	margin-top: 170px!important;
+}
+.right__sidebar {
+	position: fixed;
+	right: 15px;
+	top: 170px;
+	z-index: 99;
+}
+.main_text_block_career_page{
+  margin-top: 170px;
+}
+.anchors__block.wow.slideInUp{
+  margin-top: 170px;
+}
+.product__content.npo{
+  margin-top: 200px;
+}
+.fixet-block{
+  top: 0;
+  width: 100%;
+  /*background: red;*/
+  min-height: 180px;
+  width: 100%;
+  background: linear-gradient(180deg, #253151 70%, rgba(37, 51, 87, 0) 100%);
+  position: fixed;
+  z-index: 99;
+  padding: 0 0 50px 0;
+}
+.description__pre {
+padding: 200px 20px 0 0!important;
+}
+.wow.fadeInUp.breadcrumbs{
+  /*position: fixed;*/
+  top: 100px;
+  z-index: 99;
+  width: 100%;
+  padding: 0 445px 0 0px;
+}
+.fixet-title{
+  /*position: fixed;*/
+  z-index: 99;
+  width: 100%;
+  padding: 0 445px 0 0px;
+ 
+}
+#menu-npo-quot-spark-quot-menju li{
+	transition: all 0.5s;
+   border: 1px solid #4c5162;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 10px 0; 
+  background: rgba(29, 36, 55, 0.4);
+
+}
+#menu-npo-quot-spark-quot-menju li:hover{
+	background: rgba(29, 36, 55, 1);
+}
+#menu-npo-quot-spark-quot-menju li .bellows-item-level-1{
+  border:none!important;
+  padding: 0!important;
+  margin: 0 0px 0 20px!important;
+}
+#menu-npo-quot-spark-quot-menju li .bellows-item-level-2{
+  border:none!important;
+  padding: 0!important;
+  margin: 0 0px 0 40px!important;
+}
+.bellows-target-title.bellows-target-text{
+  display: flex!important;
+  align-items: center;
+}
+.bellows {
+margin: 20px 0 20px 6px!important;
+max-width: 100%;
+}
+.category__img.radius{
+  margin: 0 20px 0 0!important;
+}
+#menu-ao-quot-spark-quot-menju li{
+  border: 1px solid #4c5162;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 10px 0; 
+  background: rgba(29, 36, 55, .4);
+  transition: all 0.5s;
+}
+#menu-ao-quot-spark-quot-menju li:hover{
+	 background: rgba(29, 36, 55, 1);
+}
+.bellows-target{
+  padding: 5px 50px 5px 25px !important ;
+}
+
+.bellows-item-level-1:hover:before{
+	 background: rgba(255, 255, 255, 1)!important ;
+}
+.bellows-item-level-1:before{
+  content: '';
+  width: 8px!important ;
+  height: 8px!important ;
+  top: 13px!important ;
+  left: 2px!important ;
+  background: rgba(255, 255, 255, .2)!important ;
+  z-index: 99!important;
+}
+#menu-glavnoe-menju:before{
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 3px;
+	left: 10px;
+	top: 0;
+  	background: rgba(255, 255, 255, .2);
+ 
+}
+/*#menu-glavnoe-menju{
+	transition: all 0.5s;
+}*/
+#menu-glavnoe-menju li{
+	position: relative;
+	transition: all 0.5s;
+	
+} 
+.bellows-item-level-0:after{
+	transition: all 0.5s;
+}
+/*#menu-glavnoe-menju  .bellows-active:after{
+	content: '';
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	top: 13px;
+	left: 2px;
+	border-radius: 50%;
+	background: red;
+	z-index: 99;
+}*/
+#menu-glavnoe-menju li:after{
+	content: '';
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	top: 13px;
+	left: 2px;
+	border-radius: 50%;
+	background: red;
+	z-index: 99;
+	transition: all 0.5s;
+	opacity: 0
+
+}
+#menu-glavnoe-menju li:hover:after{
+	transition: all 0.5s;
+	opacity: 1
+}
+#menu-glavnoe-menju li a{
+  transition: all 0.5s;
+}
+#menu-glavnoe-menju li a:hover{
+  color: #ffffff!important;
+  opacity: 0.5;
+}
+#menu-glavnoe-menju li:before{
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  top: 10px;
+  left: -1px;
+  border-radius: 50%;
+  background: #ffffff;
+  z-index: 99;
+  transition: all 0.5s;
+}
+.bellows-item-level-1:after{
+	content: '';
+	position: absolute;
+	width: 4px!important;
+	height: 4px !important;
+	top: 15px!important;
+	left: 4px!important;
+	border-radius: 50%;
+	background: red !important;
+	z-index: 99;
+	transition: all 0.5s;
+	opacity: 0!important;
+}
+.bellows-item-level-1:hover:after{
+	opacity: 1!important;
+}
+.bellows .bellows-nav .bellows-target>.bellows-target-text{
+	position: relative;
+}
+
 .nav .open .active.dropdown-menu{
-	display: block;
+	/*display: block;*/
 }
 /*.dropdown-menu > li.active > a.dropdown-menu{
   display: block;
@@ -2201,13 +2457,14 @@ h3 + hr {
     height: 160px;
     border-radius: 30px;
     background: rgba(29, 36, 55, .4);
-    border: 1px solid #4c5162;
+    /*border: 1px solid #4c5162;*/
     margin: 8px;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     text-decoration: none;
     padding: 20px;
+
 }
 
 .item__category:hover {
@@ -3143,3 +3400,34 @@ label {
 .item__category.no-hover.item__padding{
   margin: 0 0 40px 0;
 }
+
+/*Главное меню*/
+#menu-glavnoe-menju .bellows-current-menu-parent{ /*Самый верхний уровень, когда находишья в http://spark.loc/vidy-dejatelnosti/ или http://spark.loc/vidy-dejatelnosti-npo-spark/*/
+  background: red !important;
+}
+#menu-glavnoe-menju .bellows-current-menu-ancestor{ /* Уровень второй - когда находишься уже в самом разделе, например здесь http://spark.loc/vidy-dejatelnosti-npo-spark/razrabotka-i-proizvodstvo-nazemnyh-sredstv-kontrolja/ */
+  background: red !important;
+}
+
+#menu-glavnoe-menju .bellows-current-menu-item{ /*Текущий пункт меню*/
+	background: red !important;
+}
+
+/*Боковое меню АО спарк*/
+#bellows-main-47-ao_menu .bellows-current-menu-parent{
+  background: red !important;
+}
+
+#bellows-main-47-ao_menu .bellows-current-menu-item{
+	background: red !important;
+}
+
+/*Боковое меню НПО спарк*/
+#menu-npo-quot-spark-quot-menju .bellows-current-menu-parent{
+  background: red !important;
+}
+
+#menu-npo-quot-spark-quot-menju .bellows-current-menu-item{
+	background: red !important;
+}
+

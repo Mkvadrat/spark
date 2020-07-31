@@ -13,16 +13,27 @@ get_header();
         <?php } ?>
         
         <div class="content__top pad-l pad-r pad-r-product">
-            <h1 class="wow slideInUp"><?php the_title(); ?></h1>
+             <div class="container-fluid">
+              <div class="row">
+                 <div class="fixet-block">
+                   <div class="fixet-title">
+                    <h1  class="wow fadeInUp" ><?php the_title(); ?></h1>
+                    <hr class="opacity-border wow fadeInUp"  / >
+                  </div>
+                  <div  class="wow fadeInUp breadcrumbs" >  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+                 </div>
+              </div>    
+           </div>
+           <!--  <h1 class="wow slideInUp"><?php the_title(); ?></h1>
             <hr class="opacity-border wow slideInUp"/>
             
             <div class="wow slideInUp">  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
-
+ -->
             
             <div class="container-fluid">
                 <div class="row">
                     <div class="with__sidebar">
-                        <div class="product__content">
+                        <div class="product__content npo">
                             <?php echo get_field('content_internal_pages'); ?>
                             
                             <!--<div class="owl-carousel">

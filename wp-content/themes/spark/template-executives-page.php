@@ -8,12 +8,23 @@ get_header();
 
     <div class="content">
         <div class="content__top pad-l pad-r pad-r-executives">
-            <h1 class=" wow fadeInUp"><?php the_title(); ?></h1>
+             <div class="container-fluid">
+              <div class="row">
+                 <div class="fixet-block">
+                   <div class="fixet-title">
+                    <h1  class="wow fadeInUp" ><?php the_title(); ?></h1>
+                    <hr class="opacity-border wow fadeInUp"  / >
+                  </div>
+                  <div  class="wow fadeInUp breadcrumbs" >  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+                 </div>
+              </div>    
+           </div>
+            <!-- <h1 class=" wow fadeInUp"><?php the_title(); ?></h1>
             <hr class=" wow fadeInUp" class="opacity-border"/>
             
            <div class=" wow fadeInUp">
                <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
-           </div> 
+           </div>  -->
             
             <div class="container-fluid">
                 <div class="row">

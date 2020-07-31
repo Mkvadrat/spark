@@ -13,19 +13,24 @@ get_header();
     
     <div class="content">
         <div class="content__top pad-l pad-r pad-r-news">
-            <div class="h1__news wow slideInUp">
+              <div class="container-fluid">
+              <div class="row">
+                 <div class="fixet-block">
+                   <div class="fixet-title">
+                    <h1  class="wow fadeInUp" ><?php the_title(); ?></h1>
+                    <hr class="opacity-border wow fadeInUp"  / >
+                  </div>
+                  <div  class="wow fadeInUp breadcrumbs" >  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+                 </div>
+              </div>    
+           </div>
+        <!--     <div class="h1__news wow slideInUp">
                 <h1><?php the_title(); ?></h1>
                 <div class="news__action">
                     <div class="news__date wow slideInUp"><?php echo get_the_date( 'd.m.y', get_the_ID() ); ?></div>
                     
-                    <div class="news__share wow slideInUp">
-                        <?php
-                            if ( function_exists('dynamic_sidebar') )
-                                dynamic_sidebar('sharing-page');
-                        ?>
-                    </div>
                 </div>
-            </div>
+            </div> -->
             <hr class="opacity-borderwow slideInUp"/>
             
            <div class=""> <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>

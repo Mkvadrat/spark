@@ -376,6 +376,35 @@ class mobile_menu extends Walker_Nav_Menu {
 	}
 }
 
+//добавление специального класса пункта меню
+function special_nav_class ($classes, $item) {
+	$menu_locations = get_nav_menu_locations();
+    if ( has_term($menu_locations['header_menu'], 'nav_menu', $item) ) {
+		if (in_array('menu-item-'.$item->ID, $classes) && in_array('current-page-ancestor', $classes) ){
+			$classes[] = 'current-menu-item';
+		}
+	}
+	
+	return $classes;
+}
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+/*function is_tree($pid) {      // $pid = The ID of the page we're looking for pages underneath
+    global $post;         // load details about this page
+    $anc = get_post_ancestors( $post->ID );
+    foreach($anc as $ancestor) {
+        if(is_page() && $ancestor == $pid) {
+            return true;
+        }
+    }
+	
+    if(is_page()&&(is_page($pid))){ 
+        return true;  
+	}else{ 
+        return false;
+	}
+}*/
+
 /**********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************
 ********************************************************************ХЛЕБНЫЕ КРОШКИ*************************************************************************
