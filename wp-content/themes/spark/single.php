@@ -39,7 +39,7 @@ get_header();
                     <div>
                         <?php $image_url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'full'); ?>
                         <?php if($image_url[0]){ ?>
-                            <img src="<?php echo $image_url[0]; ?>" alt="" class="mb7 "/>
+                            <img src="<?php echo $image_url[0]; ?>" alt="" class="mb7 news-foto"/>
                         <?php } ?>
                         
                         <?php echo get_field('text_news_post_page'); ?>

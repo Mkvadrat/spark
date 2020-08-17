@@ -22,7 +22,9 @@ Version: 1.0
     
     <!-- The page -->
     <div id="page-preloader" class="preloader">
-      <div class="loader"></div>
+      <div class="loader">
+          
+      </div>
     </div>
 	<div class="page <?php if(is_front_page()){ ?>home<?php } ?>">
     	<div class="bg__group">
@@ -31,7 +33,7 @@ Version: 1.0
             if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english
             ?>
                 <div class="bg__block">
-                    <video muted loop autoplay oncanplay="this.muted=true" poster="<?php echo get_field('image_header_main_page', '1219'); ?>">
+                    <video autoplay loop muted playsinline oncanplay="this.muted=true" poster="<?php echo get_field('image_header_main_page', '1219'); ?>">
                         <source src="<?php echo get_field('video_header_main_page', '1219'); ?>" type='video/mp4' />
                     </video>
                 </div>
@@ -39,7 +41,7 @@ Version: 1.0
             }elseif(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'es'){ //spanish
             ?>
                 <div class="bg__block">
-                    <video muted loop autoplay oncanplay="this.muted=true" poster="<?php echo get_field('image_header_main_page', '1221'); ?>">
+                    <video autoplay loop muted playsinline oncanplay="this.muted=true" poster="<?php echo get_field('image_header_main_page', '1221'); ?>">
                         <source src="<?php echo get_field('video_header_main_page', '1221'); ?>" type='video/mp4' />
                     </video>
                 </div>
@@ -47,7 +49,7 @@ Version: 1.0
             }else{
             ?>
                 <div class="bg__block">
-                    <video muted loop autoplay oncanplay="this.muted=true" poster="<?php echo get_field('image_header_main_page', '54'); ?>">
+                    <video autoplay loop muted playsinline oncanplay="this.muted=true" poster="<?php echo get_field('image_header_main_page', '54'); ?>">
                         <source src="<?php echo get_field('video_header_main_page', '54') ? get_field('video_header_main_page', '54') : ''; ?>" type='video/mp4' />
                     </video>
                 </div>

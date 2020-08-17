@@ -389,6 +389,17 @@ function special_nav_class ($classes, $item) {
 }
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 
+//добавление специального класса пункта меню
+function filter_nav_menu_link_attributes( $atts, $item, $args, $depth ) {
+	if ( has_term($menu_locations['npo_menu'], 'nav_menu', $item) && $item->current ) {
+		$class = 'menu-link-active';
+		$atts['class'] = isset( $atts['class'] ) ? "{$atts['class']} $class" : $class;
+	}
+
+	return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 4 );
+
 /*function is_tree($pid) {      // $pid = The ID of the page we're looking for pages underneath
     global $post;         // load details about this page
     $anc = get_post_ancestors( $post->ID );

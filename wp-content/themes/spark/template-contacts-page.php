@@ -8,7 +8,7 @@ get_header();
 
     <div class="content">
         <div class="content__top pad-l pad-r">
-            <div class="fixet-block">
+            <div class="fixet-block contact">
                    <div class="fixet-title">
                     <h1  class="wow fadeInUp" ><?php the_title(); ?></h1>
                     <hr class="opacity-border wow fadeInUp"  / >
@@ -21,7 +21,7 @@ get_header();
                  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
             </div> -->
             
-            <div class="anchors__block wow slideInUp">
+            <div class="anchors__block contact wow slideInUp">
                 <div class="tab">
                     <?php 
                         if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english

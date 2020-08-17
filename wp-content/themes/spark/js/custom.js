@@ -211,9 +211,11 @@ function openCompany(evt, companyName) {
   evt.currentTarget.className += " active";
   
 }
+
+
+
 //document.getElementById("defaultOpen").click();
 // Get the element with id="defaultOpen" and click on it
-
 
 
 

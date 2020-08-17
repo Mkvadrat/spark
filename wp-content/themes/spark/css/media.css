@@ -1,3 +1,18 @@
+
+ @media (min-aspect-ratio: 16/9) {
+    .bg__block > video { height: 300%; top: -100%; }
+ }
+ @media (max-aspect-ratio: 16/9) {
+     .bg__block > video { width: 300%; left: -100%; }
+ }
+ /* Если есть поддержка object-fit (Chrome/Chrome для Android, Safari в iOS 8 и Opera), используем его: */
+ @supports (object-fit: cover) {
+     .bg__block > video {
+         top: 0; left: 0;
+         width: 100%; height: 100%;
+         object-fit: cover;
+     }
+ }
 @media all and (max-width: 2560px) {
     .spark-404{
         height: 70vh;
@@ -324,6 +339,34 @@
     }
 }
 @media all and (max-width: 1500px) {
+    #menu-npo-quot-spark-quot-menju .bellows-item-level-1 a:hover:before{
+        top: 11px !important;
+    }
+    #menu-npo-quot-spark-quot-menju .bellows-item-level-0 a:hover:before{
+        top: 8px !important;
+    }
+    #menu-npo-quot-spark-quot-menju .bellows-item-level-1 a:before{
+         top: 8px !important;
+    }
+    #menu-npo-quot-spark-quot-menju .bellows-item-level-1 a:after{
+         top: 11px !important;
+    }
+    #menu-npo-quot-spark-quot-menju .bellows-item-level-1 a:hover:after{
+        top: 11px!important;
+    }
+    #menu-npo-quot-spark-quot-menju .bellows-item-level-0 a:hover:after{
+        /*top: 18px!important;*/
+        top: 11px!important;
+    }
+    #bellows-main-47-ao_menu .bellows-current-menu-item:after{
+        top: 40%;
+    }
+    #menu-npo-quot-spark-quot-menju .bellows-current-menu-item:before{
+        top: 25px;
+    }
+    #menu-npo-quot-spark-quot-menju .bellows-current-menu-item:after{
+        top: 28px;
+    }
     .right__sidebar {
         position: relative;
         left: 0;
@@ -557,7 +600,11 @@
     }
 
 }
-
+@media all and (max-width: 1037px) {
+    .anim{
+        display: none;
+    }
+}
 @media all and (max-width: 1300px) {
     .maps-footer{
         max-width: 900px;
@@ -949,6 +996,9 @@
     }
 }   
 @media screen and (max-width: 992px) {
+    .anchors__block.contact.wow.slideInUp{
+        margin-top: -30px;
+    }
     .mb7{
         margin-top: 0px;
     }
@@ -1836,6 +1886,9 @@ line-height: 18px;
     }
 }
 @media screen and (max-width: 500px) {
+    #bellows-main-47-ao_menu .bellows-current-menu-item:after{
+        top: 39%;
+    }
      .slider-title {
         font-size: 14px;
         height: 70px;
@@ -1879,6 +1932,15 @@ line-height: 18px;
     }
 }
 @media screen and (max-width: 485px) {
+    #bellows-main-47-ao_menu .bellows-current-menu-item:before{
+        top: 23px;
+    }
+     #bellows-main-47-ao_menu .bellows-current-menu-item:after{
+        top:26px;
+    }
+    .logo__block  a svg{
+        width: 300px;
+    }
     .spark__img{
         height: 300px !important;
     }
