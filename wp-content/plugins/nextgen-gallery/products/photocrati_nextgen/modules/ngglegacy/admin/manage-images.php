@@ -161,7 +161,7 @@ function nggallery_picturelist($controller)
             // load a content via ajax
             $('a.ngg-dialog').click(function() {
                 var dialogs = $('.ngg-overlay-dialog:visible');
-                if (dialogs.length > 0) {
+                if (dialogs.size() > 0) {
                     return false;
                 }
 
@@ -575,8 +575,6 @@ function nggallery_picturelist($controller)
                     </form><!-- /form#updategallery  -->
 
                     <br class="clear"/>
-
-                    <?php do_action('ngg_manage_images_marketing_block'); ?>
 
                 </div><!-- /div.ngg_page_content_main -->
 

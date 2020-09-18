@@ -4102,10 +4102,6 @@
 		$hndle: function(){
 			return this.$('> .hndle');
 		},
-
-		$handleActions: function(){
-			return this.$('> .postbox-header .handle-actions');
-		},
 		
 		$inside: function(){
 			return this.$('> .inside');
@@ -4138,13 +4134,7 @@
 			// Append edit link.
 			var edit = this.get('edit');
 			if( edit ) {
-				var html = '<a href="' + edit + '" class="dashicons dashicons-admin-generic acf-hndle-cog acf-js-tooltip" title="' + acf.__('Edit field group') + '"></a>';
-				var $handleActions = this.$handleActions();
-				if( $handleActions.length ) {
-					$handleActions.prepend( html );
-				} else {
-					this.$hndle().append( html );
-				}
+				this.$hndle().append('<a href="' + edit + '" class="dashicons dashicons-admin-generic acf-hndle-cog acf-js-tooltip" title="' + acf.__('Edit field group') + '"></a>');
 			}
 			
 			// Show postbox.

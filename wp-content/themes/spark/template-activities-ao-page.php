@@ -8,13 +8,18 @@ get_header();
 
     <div class="content">
         <div class="content__top pad-l pad-r">
-            <hr class="line-none opacity-border wow slideInUp"/ >
+               <div id="sticker">
+                <h1  class="wow fadeInUp"  ><?php the_title(); ?></h1>
+                <hr class="opacity-border wow fadeInUp"  / >
+                <div   class="wow fadeInUp breadcrumbs" >  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+            </div>
+            <!-- <hr class="line-none opacity-border wow slideInUp"/ >
             <h1 class="wow slideInUp"><?php the_title(); ?></h1>
             <hr class="opacity-border wow slideInUp"/>
             
             <div class="wow slideInUp">
                 <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
-            </div>
+            </div> -->
             
             <!--<div class="anchors__block wow slideInUp">
                 <a href="#spark__ao" class="active"><?php echo get_field('title_block_a_activities_page'); ?></a>

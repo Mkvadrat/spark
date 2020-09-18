@@ -12,11 +12,16 @@ get_header(); ?>
     
     <div class="content">
         <div class="content__top pad-l pad-r">
-            <h1><?php the_title(); ?></h1>
+              <div id="sticker">
+                <h1  class="wow fadeInUp"  ><?php the_title(); ?></h1>
+                <hr class="opacity-border wow fadeInUp"  / >
+                <div   class="wow fadeInUp breadcrumbs" >  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+            </div>
+      <!--       <h1><?php the_title(); ?></h1>
             <hr/>
             
             <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
-            
+             -->
             <div class="container-fluid">
                 <div class="row">
                     <div>

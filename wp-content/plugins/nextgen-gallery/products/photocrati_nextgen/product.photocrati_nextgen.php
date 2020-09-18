@@ -54,7 +54,6 @@ class P_Photocrati_NextGen extends C_Base_Product
 		'photocrati-third_party_compat'         =>  'always',
 		'photocrati-nextgen_xmlrpc'             =>  'always',
 		'photocrati-wpcli'                      =>  'always',
-        'photocrati-marketing'                  =>  'backend',
         'photocrati-imagify'                    =>  'backend'
 	);
 

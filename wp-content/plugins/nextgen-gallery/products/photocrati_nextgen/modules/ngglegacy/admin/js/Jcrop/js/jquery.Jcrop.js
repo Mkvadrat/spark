@@ -43,17 +43,15 @@ $.Jcrop = function(obj,opt)
 	// Some on-the-fly fixes for MSIE...sigh
 	if (!('trackDocument' in opt))
 	{
-		if (navigator.appName.indexOf("Internet Explorer") !== -1) {
-			opt.trackDocument = navigator.appVersion.indexOf("MSIE 8") !== -1;
-		} else {
+		opt.trackDocument = $.browser.msie ? false : true;
+		if ($.browser.msie && $.browser.version.split('.')[0] == '8')
 			opt.trackDocument = true;
-		}
 	}
 
 	if (!('keySupport' in opt))
-		opt.keySupport = navigator.appName.indexOf("Internet Explorer") !== -1;
-
-		// }}}
+			opt.keySupport = $.browser.msie ? false : true;
+		
+	// }}}
 	// Extend the default options {{{
 	var defaults = {
 
@@ -418,7 +416,7 @@ $.Jcrop = function(obj,opt)
 		if (options.drawBorders) {
 			borders = {
 					top: insertBorder('hline')
-						.css('top', navigator.appVersion.indexOf("MSIE 8") !== -1 ? px(-1) : px(0)),
+						.css('top',$.browser.msie?px(-1):px(0)),
 					bottom: insertBorder('hline'),
 					left: insertBorder('vline'),
 					right: insertBorder('vline')
@@ -967,9 +965,7 @@ $.Jcrop = function(obj,opt)
 	function newTracker()
 	{
 		var trk = $('<div></div>').addClass(cssClass('tracker'));
-		if (navigator.appName.indexOf("Internet Explorer") !== -1) {
-			trk.css({ opacity: 0, backgroundColor: 'white' });
-		}
+		$.browser.msie && trk.css({ opacity: 0, backgroundColor: 'white' });
 		return trk;
 	};
 

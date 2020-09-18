@@ -17,11 +17,15 @@ get_header();
    
    <div class="content">
         <div class="content__top pad-l pad-r">
-            <h1 class="wow slideInUp"><?php echo $category->name; ?></h1>
+           <!--  <h1 class="wow slideInUp"><?php echo $category->name; ?></h1>
             <hr class="opacity-border wow slideInUp"/>
            
-          <div class="wow slideInUp"> <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
-            
+          <div class="wow slideInUp"> <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div> -->
+              <div id="sticker">
+                <h1  class="wow fadeInUp"  ><?php the_title(); ?></h1>
+                <hr class="opacity-border wow fadeInUp"  / >
+                <div   class="wow fadeInUp breadcrumbs" >  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+            </div>
             <div class="container-fluid">
                 <div class="row">
                     <div>

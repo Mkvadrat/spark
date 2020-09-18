@@ -8,13 +8,18 @@ get_header();
 
     <div class="content">
         <div class="content__top pad-l pad-r">
-            <div class="fixet-block contact">
+            <div id="sticker">
+                <h1  class="wow fadeInUp"  ><?php the_title(); ?></h1>
+                <hr class="opacity-border wow fadeInUp"  / >
+                <div   class="wow fadeInUp breadcrumbs" >  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+            </div>
+            <!-- <div class="fixet-block contact">
                    <div class="fixet-title">
                     <h1  class="wow fadeInUp" ><?php the_title(); ?></h1>
                     <hr class="opacity-border wow fadeInUp"  / >
                   </div>
                   <div  class="wow fadeInUp breadcrumbs" >  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
-                 </div>
+                 </div> -->
             <!-- <h1 class="wow slideInUp"><?php the_title(); ?></h1>
             <hr class="opacity-border wow slideInUp"/>
             <div class="wow slideInUp">
@@ -48,9 +53,9 @@ get_header();
                 <div class="row">
                     <div>
                         <div class="anchors__content">
-                            <div id="spark__ao" class="tabcontent" style="display: block;">
+                            <div id="spark__ao" class="tabcontent wow slideInUp" style="display: block;">
                                     <div id="spark__ao">
-                                    <h2 class="wow slideInUp"><?php echo get_field('title_a_block_a_contacts_page'); ?></h2>
+                                    <h2 class=""><?php echo get_field('title_a_block_a_contacts_page'); ?></h2>
     
                                     <?php if( have_rows('contact_a_block_a_contacts_page')){ ?>
                                     <div class="block-contact-info">
@@ -58,8 +63,8 @@ get_header();
                                             <?php while ( have_rows('contact_a_block_a_contacts_page') ) { the_row(); ?>
                                             <div >
                                                 <div >
-                                                    <div class="revealator-slideup"><?php echo get_sub_field('name_contacts_page'); ?></div>
-                                                    <p class="revealator-slideup"><?php echo get_sub_field('value_contacts_page'); ?></p>
+                                                    <div ><?php echo get_sub_field('name_contacts_page'); ?></div>
+                                                    <p ><?php echo get_sub_field('value_contacts_page'); ?></p>
                                                 </div>
                                             </div>
                                             <?php } ?>
@@ -83,8 +88,8 @@ get_header();
                                             <?php while ( have_rows('contact_b_block_a_contacts_page') ) { the_row(); ?>
                                             <div >
                                                 <div >
-                                                    <div class="revealator-slideup"><?php echo get_sub_field('name_contacts_page'); ?></div>
-                                                    <p class="revealator-slideup"><?php echo get_sub_field('value_contacts_page'); ?></p>
+                                                    <div><?php echo get_sub_field('name_contacts_page'); ?></div>
+                                                    <p ><?php echo get_sub_field('value_contacts_page'); ?></p>
                                                 </div>
                                             </div>
                                             <?php } ?>
@@ -119,13 +124,13 @@ get_header();
                                     <h2 class="wow slideInUp"><?php echo get_field('title_a_block_b_contacts_page'); ?></h2>
                                      
                                     <?php if( have_rows('contact_block_b_contacts_page')){ ?>
-                                    <div class="block-contact-info">
+                                    <div class="block-contact-info wow slideInUp">
                                         <div class="block-contact-address">
                                             <?php while ( have_rows('contact_block_b_contacts_page') ) { the_row(); ?>
                                             <div >
                                                 <div >
-                                                    <div class="revealator-slideup"><?php echo get_sub_field('name_contacts_page'); ?></div>
-                                                    <p class="revealator-slideup"><?php echo get_sub_field('value_contacts_page'); ?></p>
+                                                    <div class=""><?php echo get_sub_field('name_contacts_page'); ?></div>
+                                                    <p class=""><?php echo get_sub_field('value_contacts_page'); ?></p>
                                                 </div>
                                             </div>
                                             <?php } ?>

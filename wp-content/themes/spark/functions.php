@@ -70,6 +70,7 @@ function mk_scripts(){
 		wp_enqueue_script( 'aos', get_template_directory_uri() . '/js/aos.js', '', '', true );
 		wp_enqueue_script( 'scroll', get_template_directory_uri() . '/js/scroll.js', '', '', true );
 		wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/parallax.min.js', '', '', false );
+		wp_enqueue_script( 'stiky', get_template_directory_uri() . '/js/jquery.sticky.js', '', '', false );
 		//wp_enqueue_script( 'parallax-img', get_template_directory_uri() . '/js/parallax-img.js', '', '', true );
 		//wp_enqueue_script( 'parallaxCode', get_template_directory_uri() . '/js/parallaxCode.js', '', '', true );
 		wp_enqueue_script( 'custom-min', get_template_directory_uri() . '/js/custom.js', '', '', true );
@@ -172,7 +173,7 @@ add_action( 'widgets_init', 'register_my_widgets' );
 ***********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************/
 // Добавляем свой класс для пунктов меню:
-class header_menu extends Walker_Nav_Menu {
+/*class header_menu extends Walker_Nav_Menu {
 	// Добавляем классы к вложенным ul
 	function start_lvl( &$output, $depth = 0, $args = Array() ) {
 		// Глубина вложенных ul
@@ -271,7 +272,7 @@ class header_menu extends Walker_Nav_Menu {
 
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
-}
+}*/
 
 //Мобильное меню
 // Добавляем свой класс для пунктов меню:
@@ -378,10 +379,30 @@ class mobile_menu extends Walker_Nav_Menu {
 
 //добавление специального класса пункта меню
 function special_nav_class ($classes, $item) {
-	$menu_locations = get_nav_menu_locations();
-    if ( has_term($menu_locations['header_menu'], 'nav_menu', $item) ) {
-		if (in_array('menu-item-'.$item->ID, $classes) && in_array('current-page-ancestor', $classes) ){
-			$classes[] = 'current-menu-item';
+	if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ 
+		$menu_locations = get_nav_menu_locations();
+		$menu_locations = apply_filters( 'wpml_object_id', 25, 'nav_menu', true, 'en' );
+				
+		if ( has_term($menu_locations['header_menu'], 'nav_menu', $item) ) {
+			if (in_array('menu-item-'.$item->ID, $classes) && in_array('current-page-ancestor', $classes) ){
+				$classes[] = 'current-menu-item';
+			}
+		}
+	}elseif(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'es'){
+		$menu_locations = get_nav_menu_locations();
+		$menu_locations = apply_filters( 'wpml_object_id', 26, 'nav_menu', true, 'en' );
+		
+		if ( has_term($menu_locations['header_menu'], 'nav_menu', $item) ) {
+			if (in_array('menu-item-'.$item->ID, $classes) && in_array('current-page-ancestor', $classes) ){
+				$classes[] = 'current-menu-item';
+			}
+		}
+	}else{
+		$menu_locations = get_nav_menu_locations();
+		if ( has_term($menu_locations['header_menu'], 'nav_menu', $item) ) {
+			if (in_array('menu-item-'.$item->ID, $classes) && in_array('current-page-ancestor', $classes) ){
+				$classes[] = 'current-menu-item';
+			}
 		}
 	}
 	
@@ -389,13 +410,46 @@ function special_nav_class ($classes, $item) {
 }
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 
+//все пункты открыты
+function add_class_active ($classes, $item) {
+	if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ 
+		$menu_locations = get_nav_menu_locations();
+		$menu_locations = apply_filters( 'wpml_object_id', 25, 'nav_menu', true, 'en' );
+				
+		if ( has_term($menu_locations['header_menu'], 'nav_menu', $item) ) {
+			if (in_array('menu-item-'.$item->ID, $classes) && is_front_page() ){
+				$classes[] = 'active';
+			}
+		}
+	}elseif(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'es'){
+		$menu_locations = get_nav_menu_locations();
+		$menu_locations = apply_filters( 'wpml_object_id', 26, 'nav_menu', true, 'en' );
+		
+		if ( has_term($menu_locations['header_menu'], 'nav_menu', $item) ) {
+			if (in_array('menu-item-'.$item->ID, $classes) && is_front_page() ){
+				$classes[] = 'active';
+			}
+		}
+	}else{
+		$menu_locations = get_nav_menu_locations();
+		if ( has_term($menu_locations['header_menu'], 'nav_menu', $item) ) {
+			if (in_array('menu-item-'.$item->ID, $classes) && is_front_page() ){
+				$classes[] = 'active';
+			}
+		}
+	}
+	
+	return $classes;
+}
+add_filter('nav_menu_css_class' , 'add_class_active' , 10 , 2);
+
 //добавление специального класса пункта меню
 function filter_nav_menu_link_attributes( $atts, $item, $args, $depth ) {
 	if ( has_term($menu_locations['npo_menu'], 'nav_menu', $item) && $item->current ) {
 		$class = 'menu-link-active';
 		$atts['class'] = isset( $atts['class'] ) ? "{$atts['class']} $class" : $class;
-	}
-
+	}	
+	
 	return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 4 );

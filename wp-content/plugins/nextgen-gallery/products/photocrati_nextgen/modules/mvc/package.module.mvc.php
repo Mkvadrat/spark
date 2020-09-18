@@ -323,14 +323,15 @@ class Mixin_MVC_Controller_Instance_Methods extends Mixin
      */
     function render_partial($template, $params = array(), $return = FALSE, $context = NULL)
     {
+        // We'll use the name of the view as the context if one hasn't been provided
+        if (is_null($context)) {
+            $context = $template;
+        }
         $view = $this->object->create_view($template, $params, $context);
         return $view->render($return);
     }
     function create_view($template, $params = array(), $context = NULL)
     {
-        if (!$context) {
-            $context = $this->object->context;
-        }
         $factory = C_Component_Factory::get_instance();
         $view = $factory->create('mvc_view', $template, $params, NULL, $context);
         return $view;
@@ -352,8 +353,7 @@ class C_MVC_View extends C_Component
         $this->_template = $template;
         $this->_params = (array) $params;
         $this->_engine = $engine;
-        $context = $context ? array_unique([$context, $template]) : $template;
-        parent::__construct($context);
+        parent::__construct();
     }
     function define($context = FALSE)
     {

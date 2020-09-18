@@ -30,13 +30,14 @@
         margin-top: 60px;
     }
     .form {
-          margin: 0 0px 0 -20px;
+        margin: 0 0px 0 4px;
     }
     #piter,#moskow,#piter2{
         margin: 0 20px 0 -20px;
     }
     .mb7{
         padding-right: 20px;
+        margin: 170px 0 0 1px;
     }
 	.item{
 		height: 900px;
@@ -54,14 +55,14 @@
         margin: 0 20px 0 0;
     }
     .my-tabs{
-        margin: 150px 20px 40px 0px;
+        margin: 0px 20px 40px 0px;
     }
      .pad-r {
         padding-right: 10px;
     }
     .description__pre{
         /*padding: 0px 40px 0 0;*/
-        padding: 160px 40px 0 0!important;
+        /*padding: 160px 40px 0 0!important;*/
     }
     .description__full{
         padding: 0px 20px 0 0!important;
@@ -152,6 +153,10 @@
     }*/
 }
 @media all and (max-width: 2200px) {
+    .revealator-slideup.revealator-within.upg{
+        margin-top: 30px;
+    }
+
     .product__content .owl-carousel .owl-item img {
        /* height: auto;*/
     }
@@ -339,11 +344,18 @@
     }
 }
 @media all and (max-width: 1500px) {
+
+    #menu-ao-spark-menju-ispanskij li:hover:after{
+        top: 45%!important;
+    }
+    #menu-ao-spark-menju-ispanskij .bellows-current-menu-item:after{
+        top: 45%!important;
+    }
     #menu-npo-quot-spark-quot-menju .bellows-item-level-1 a:hover:before{
         top: 11px !important;
     }
     #menu-npo-quot-spark-quot-menju .bellows-item-level-0 a:hover:before{
-        top: 8px !important;
+        top: 14px !important;
     }
     #menu-npo-quot-spark-quot-menju .bellows-item-level-1 a:before{
          top: 8px !important;
@@ -356,10 +368,10 @@
     }
     #menu-npo-quot-spark-quot-menju .bellows-item-level-0 a:hover:after{
         /*top: 18px!important;*/
-        top: 11px!important;
+        top: 17px!important;
     }
     #bellows-main-47-ao_menu .bellows-current-menu-item:after{
-        top: 40%;
+        top: 26px;
     }
     #menu-npo-quot-spark-quot-menju .bellows-current-menu-item:before{
         top: 25px;
@@ -442,7 +454,7 @@
         height: 250px;
     }
     .form {
-        margin: 0 0px 0 -10px;
+        margin: 0 0px 0 0px;
     }
     #piter,#moskow,#piter2{
         margin: 0 0px 0 0px;
@@ -482,9 +494,7 @@
     .tab-content > .tab-pane{
         margin: 0;
     }
-    .my-tabs{
-        margin: 150px 0px 40px 0px;
-    }
+   
    /* .description__pre{
         padding: 0;
     }*/
@@ -605,6 +615,11 @@
         display: none;
     }
 }
+/*@media all and (max-width: 1335px) {
+	.wow.slideInUp.top-fixer-margin1 {
+		margin-top: 200px;
+	}
+}*/
 @media all and (max-width: 1300px) {
     .maps-footer{
         max-width: 900px;
@@ -706,6 +721,7 @@
    }
 }
 @media all and (max-width: 1024px) {
+
      #owl-history{
         margin-top: 0px;
     }
@@ -733,6 +749,7 @@
     }
 }
 @media all and (max-width: 1200px) {
+
     .form-group label{
         margin-left: 20px;
         top: -30px;
@@ -837,9 +854,9 @@
     .fixet-title{
         padding: 0 420px 0 0px;
     }
-    .wow.fadeInUp.breadcrumbs{
+   /* .wow.fadeInUp.breadcrumbs{
         padding: 0 420px 0 0px;
-    }
+    }*/
     .form-group{
         margin: 0;
     }
@@ -981,7 +998,13 @@
     }
     
 }
+@media screen and (max-width: 1490px){
+    .mb7{
+        margin-top: 190px;
+    }
+}
 @media all and (max-width: 1024px) {
+    
     .product__content .owl-carousel .owl-item img {
        /* height: auto;*/
     }
@@ -994,14 +1017,91 @@
     label {
         top: -8px;
     }
+}
+@media screen and (max-width: 1200px){
+    
+}
+@media screen and (max-width: 1024px) { 
+
+    /* .top-fixer-margin-big{
+        margin-top: 235px!important;
+    }
+    .wow.slideInUp.top-fixer-margin-medium.sostav{
+        margin-top: -15px!important;
+    }*/
+}
+@media screen and (max-width: 1570px) {
+    .revealator-slideup.revealator-within.upg{
+        margin-top: 40px!important;
+    }
+}
+@media screen and (max-width: 1290px) {
+    .revealator-slideup.revealator-within.upg{
+        margin-top: 90px!important;
+    }
+}
+@media screen and (max-width: 1190px) {
+    /*.wow.slideInUp.top-fixer-margin-medium.sostav{
+        margin-top: 95px!important;
+    }*/
+    .revealator-slideup.revealator-within.upg{
+        margin-top: 140px!important;
+    }
 }   
 @media screen and (max-width: 992px) {
+    #sticker-sticky-wrapper {
+        margin-bottom: 30px;
+    }
+    #sticker{
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+     .mb7{
+        margin-top: -30px;
+    }
+/*    .wow.slideInUp.soz{
+        margin-top: 20px!important
+    }*/
+    .main_text_block_career_page{
+        margin-top: -60px!important;
+    }
+    .wow.slideInUp.top-fixer-margin-medium.sostav{
+        margin-top: 0px!important;
+    }
+/*    .product__content.npo{
+        margin-top: 20px;
+    }
+*/   /* .wow.slideInUp.top-fixer-margin.tex{
+         margin-top: -50px!important;
+    }*/
+   /* .wow.slideInUp.top-fixer-margin.pre{
+          margin-top: -30px!important;
+    }*/
+    /*.wow.slideInUp.top-fixer-margin.modern{
+        margin-top: -50px!important;
+    }*/
+/*    .wow.slideInUp.top-fixer-margin1{
+        margin-top: -40px!important;
+    }*/
+/*    .history-top-text.aos-init.aos-animate{
+        margin-top: -200px;
+        margin-bottom: -40px;
+    }*/
+    .revealator-slideup.revealator-within.upg{
+         margin-top: 50px!important;
+    }
+   /* .wow.slideInUp.top-fixer-margin-medium.sostav{
+        margin-top: -180px!important;
+    }*/
+     .my-tabs{
+        margin: 0px 0px 40px 0px;
+    }
     .anchors__block.contact.wow.slideInUp{
         margin-top: -30px;
     }
-    .mb7{
+/*    .mb7{
         margin-top: 0px;
-    }
+    }*/
     .top-fixer-margin-medium{
         margin-top: 0px!important;
     }
@@ -1015,7 +1115,7 @@
         margin-top: 170px;
     }
     .anchors__block.wow.slideInUp{
-        margin-top: 0px;
+        margin-top: -40px;
     }
     .fixet-title{
         position: relative;
@@ -1431,6 +1531,20 @@
     }
 }
 @media screen and (max-width: 834px) {
+     .mb7{
+        margin-top: -10px;
+    }
+/*
+     .wow.slideInUp.top-fixer-margin.modern{
+        margin-top: -40px!important;
+    }*/
+    .logo__block  a svg{
+        max-width: 320px;
+    }
+/*    .wow.slideInUp.top-fixer-margin-medium.sostav{
+        margin-top: 40px!important;
+    }*/
+  
     .header-desc{
         padding-top:0;
         padding-bottom: 0;
@@ -1541,8 +1655,18 @@
         height: 250px!important;
     }
 }
-@media screen and (max-width: 773px) {
+
+/*@media screen and (max-width: 773px) {*/
+@media screen and (max-width: 735px) {
+    .wow.slideInUp.top-fixer-margin1{
+        margin-top: 0!important;
+    }
+}    
 @media screen and (max-width: 768px) {
+    .title-option{
+        font-size: 24px;
+        line-height: 26px;
+    }
     .img__2-block{
         grid-template-columns: 1fr;
         height: 635px;
@@ -1885,7 +2009,30 @@ line-height: 18px;
         margin: 20px 0 25px;
     }
 }
+
 @media screen and (max-width: 500px) {
+    .mb7{
+        margin-top: 10px;
+    }
+     /* .wow.slideInUp.top-fixer-margin.tex{
+         margin-top: -15px!important;
+    }*/
+/*    .history-top-text.aos-init.aos-animate{
+        margin-top: -65px;
+    }*/
+    .title-option{
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .main_text_block_career_page{
+        padding: 0 10px;
+    }
+    .revealator-slideup.revealator-within.upg{
+        margin-top: 80px!important;
+    }
+    /* .wow.slideInUp.top-fixer-margin-medium.sostav{
+        margin-top: 30px!important;
+    }*/
     #bellows-main-47-ao_menu .bellows-current-menu-item:after{
         top: 39%;
     }
@@ -1901,6 +2048,9 @@ line-height: 18px;
     }
 }
 @media screen and (max-width: 414px) {
+    /*.wow.slideInUp.top-fixer-margin-medium.sostav{
+        margin-top: 30px!important;
+    }*/
     .title-map{
         font-size: 18px;
         margin-bottom: 50px;
@@ -1931,7 +2081,50 @@ line-height: 18px;
         margin-top: 10px;
     }
 }
+@media screen and (max-width: 1232px) {
+	.tab{
+		margin-top: 20px;
+        /*z-index: 999;*/
+	}
+	/*.top-fixer-margin-medium{
+		margin-top: 80px!important;
+	}*/
+}
 @media screen and (max-width: 485px) {
+    .logo__block a svg{
+        width: 250px!important;
+    }
+	.my-tabs{
+		margin: 0px 0px 40px 0px!important;
+	}
+	.description__pre{
+		padding:0 40px 0 0!important;
+		margin-top: -40px;
+	}
+	.main_text_block_career_page{
+		margin-top: -50px;
+	}
+	/*.product__content.npo{
+		margin-top: 50px!important;
+	}*/
+	/*.top-fixer-margin-medium{
+		margin-top: 0!important;
+	}*/
+/*	.product__content.npo{
+		margin-top: 100px;
+	}*/
+	/*.top-fixer-margin{
+		margin-top: 20px!important;
+	}
+	.top-fixer-margin-big{
+		margin-top: 15px!important;
+	}
+	.top-fixer-margin-big{
+		margin-top: 
+	}*/
+	.wow.slideInUp.top-fixer-margin1{
+		margin-top: 0;
+	}
     #bellows-main-47-ao_menu .bellows-current-menu-item:before{
         top: 23px;
     }
@@ -2397,7 +2590,9 @@ line-height: 18px;
     }*/
 }
 @media screen and (max-width: 375px) {
-
+    .my-tabs{
+        margin: 0px 0px 40px 0px!important;
+    }
     
 }
 @media screen and (max-width: 320px) {

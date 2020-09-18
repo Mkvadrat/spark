@@ -13,15 +13,21 @@ get_header();
     
     <div class="content">
         <div class="content__top pad-l pad-r pad-r-news">
+            <div id="sticker">
+                <h1  class="wow fadeInUp"  ><?php the_title(); ?></h1>
+                <hr class="opacity-border wow fadeInUp"  / >
+                <div   class="wow fadeInUp breadcrumbs" >  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+            </div>
               <div class="container-fluid">
               <div class="row">
-                 <div class="fixet-block">
+                
+                 <!-- <div class="fixet-block">
                    <div class="fixet-title">
                     <h1  class="wow fadeInUp" ><?php the_title(); ?></h1>
                     <hr class="opacity-border wow fadeInUp"  / >
                   </div>
                   <div  class="wow fadeInUp breadcrumbs" >  <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
-                 </div>
+                 </div> -->
               </div>    
            </div>
         <!--     <div class="h1__news wow slideInUp">
@@ -31,9 +37,9 @@ get_header();
                     
                 </div>
             </div> -->
-            <hr class="opacity-borderwow slideInUp"/>
+          <!--   <hr class="opacity-borderwow slideInUp"/> -->
             
-           <div class=""> <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div>
+          <!--  <div class=""> <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?></div> -->
             <div class="container-fluid">
                 <div class="row">
                     <div>
