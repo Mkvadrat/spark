@@ -41,11 +41,17 @@ get_header();
             <div>
                 <?php echo get_field('main_text_block_career_page'); ?>
             </div>
+			<div class="anchor-buttons">
+                <div class="row">
+					<a href="#aoSpark"><?php echo get_field('title_a_block_a_career_page'); ?></a>
+					<a href="#aoNpoSpark"><?php echo get_field('title_a_block_b_career_page'); ?></a>
+				</div>
+			</div>
             <div class="container-fluid">
                 <div class="row">
                     <div>
                         <div class="grid__career">
-                            <div class="career__item">
+                            <div class="career__item" id="aoSpark">
                                 <h2 class="wow slideInUp"><?php echo get_field('title_a_block_a_career_page'); ?></h2>
                                 <div class="career__box">
                                     <?php if(get_field('title_b_block_a_career_page')){ ?>
@@ -82,7 +88,7 @@ get_header();
                                     <?php } ?>
                                 </div>
                             </div>
-                            <div class="career__item">
+                            <div class="career__item" id="aoNpoSpark">
                                 <h2 class="wow slideInUp"><?php echo get_field('title_a_block_b_career_page'); ?></h2>
                                 <div class="career__box">
                                     <?php if(get_field('title_b_block_b_career_page')){ ?>

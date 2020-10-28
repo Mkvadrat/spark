@@ -59,6 +59,17 @@ $(document).ready(function () {
         }, 1000);
         event.preventDefault();
     });
+	
+  $(".anchor-buttons a").on('click', function (event) {
+	  console.log('mir');
+    var elementClick = $(this).attr("href")
+    var destination = $(elementClick).offset().top - 100;
+    $('html, body').stop().animate({
+      scrollTop: destination
+    }, 800);
+    event.preventDefault();
+  });
+	
  $('.product__content .owl-carousel').owlCarousel({
   loop: true,
   items: 1,

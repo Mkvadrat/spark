@@ -70,7 +70,11 @@ get_header();
                                     <div class="grid__category mb-7">
                                         <?php while ( have_rows('personal_a_block_a_contacts_page') ) { the_row(); ?>
                                         <div class="item__category  no-hover wow slideInUp ">
-                                            <div class="category__img-contact"><img src="<?php echo get_sub_field('image_contacts_page'); ?>" alt="cont"/></div>
+                                            <?php if(get_sub_field('image_contacts_page')){ ?>
+                                            <div class="category__img-contact">
+                                                <img src="<?php echo get_sub_field('image_contacts_page'); ?>" alt="cont"/>
+                                            </div>
+                                            <?php } ?>
                                             <div class="category__text">
                                                 <div class="title__"><?php echo get_sub_field('name_contacts_page'); ?></div>
                                                 <div class="state__"><?php echo get_sub_field('position_contacts_page'); ?></div>
@@ -88,7 +92,11 @@ get_header();
                                     <?php if( have_rows('personal_b_block_a_contacts_page')){ ?>
                                     <?php while ( have_rows('personal_b_block_a_contacts_page') ) { the_row(); ?>
                                     <div class="item__category no-hover item__padding  w-100 revealator-slideup">
-                                        <div class="category__img-contact"><img src="<?php echo get_sub_field('image_contacts_page'); ?>" alt="cont"/></div>
+                                        <?php if(get_sub_field('image_contacts_page')){ ?>
+                                        <div class="category__img-contact">
+                                            <img src="<?php echo get_sub_field('image_contacts_page'); ?>" alt="cont"/>
+                                        </div>
+                                        <?php } ?>
                                         <div class="category__text">
                                             <div class="title__"><?php echo get_sub_field('name_contacts_page'); ?></div>
                                             <div class="state__"><?php echo get_sub_field('position_contacts_page'); ?></div>
@@ -108,7 +116,11 @@ get_header();
                                     <div class="grid__category mb-7">
                                         <?php while ( have_rows('personal_block_b_contacts_page') ) { the_row(); ?>
                                         <div class="item__category  no-hover wow slideInUp">
-                                            <div class="category__img-contact"><img src="<?php echo get_sub_field('image_contacts_page'); ?>" alt="cont"/></div>
+                                            <?php if(get_sub_field('image_contacts_page')){ ?>
+                                            <div class="category__img-contact">
+                                                <img src="<?php echo get_sub_field('image_contacts_page'); ?>" alt="cont"/>
+                                            </div>
+                                            <?php } ?>
                                             <div class="category__text">
                                                 <div class="title__"><?php echo get_sub_field('name_contacts_page'); ?></div>
                                                 <div class="state__"><?php echo get_sub_field('position_contacts_page'); ?></div>

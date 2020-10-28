@@ -34,21 +34,21 @@ Version: 1.0
                             <?php 
                                 if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english
                                 ?>
-                                    <div class="footer__text"  data-aos="fade-up" data-aos-offset="0" ><?php echo get_field('inf_text_footer_main_page', '1219'); ?></div>
+                                    <div class="footer__text"  ><?php echo get_field('inf_text_footer_main_page', '1219'); ?></div>
                                 <?php
                                 }elseif(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'es'){ //spanish
                                 ?>
-                                    <div class="footer__text"  data-aos="fade-up" data-aos-offset="0" ><?php echo get_field('inf_text_footer_main_page', '1221'); ?></div>
+                                    <div class="footer__text"    ><?php echo get_field('inf_text_footer_main_page', '1221'); ?></div>
                                 <?php
                                 }else{
                                 ?>
-                                    <div class="footer__text"  data-aos="fade-up" data-aos-offset="0" ><?php echo get_field('inf_text_footer_main_page', '54'); ?></div>
+                                    <div class="footer__text"   ><?php echo get_field('inf_text_footer_main_page', '54'); ?></div>
                                 <?php
                                 }
                             ?> 
                         </div>
                         <div class="col-xs-12  ">
-                            <div class="d-flex inter" data-aos="fade-up" data-aos-offset="0">
+                            <div class="d-flex inter" >
                                 <div class="copy-block">
                                     <?php 
                                         if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english
@@ -66,7 +66,7 @@ Version: 1.0
                                         }
                                     ?> 
                                 </div>
-                                <div data-aos="fade-up" data-aos-offset="0">
+                                <div >
                                     <?php 
                                         if(defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){ //english
                                         ?>
